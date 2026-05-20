@@ -1,8 +1,8 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { Phone, Mail, MapPin, Star, ArrowRight, Users, Building2, MapPinned, Globe } from "lucide-react";
-import { useId } from "react";
+import { Phone, Mail, MapPin, Star, ArrowRight, Users, Building2, MapPinned, Globe, CheckCircle } from "lucide-react";
+import { useId, useState } from "react";
 
 const loanTypes = ["Car Finance","Business Loan","Equipment Finance","Personal Loan","Home Loan Referral","Credit Impaired Lending","Not Sure Yet"];
 
@@ -27,9 +27,28 @@ function Input({ id, type = "text", name, autoComplete, placeholder }: { id: str
 
 const vp = { once: false, amount: 0.1 } as const;
 
+type Status = "idle" | "submitting" | "success" | "error";
+
 export function ContactSection() {
   const r = useReducedMotion();
   const ids = { first: useId(), last: useId(), email: useId(), loanType: useId(), message: useId() };
+  const [status, setStatus] = useState<Status>("idle");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("submitting");
+    const data = Object.fromEntries(new FormData(e.currentTarget));
+    try {
+      const res = await fetch("https://formspree.io/f/mojbepdp", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(data),
+      });
+      setStatus(res.ok ? "success" : "error");
+    } catch {
+      setStatus("error");
+    }
+  }
 
   return (
     <div className="relative bg-[#080d18] py-12 sm:py-14 md:py-16 px-4">
@@ -108,7 +127,15 @@ export function ContactSection() {
             <div className="relative p-5 sm:p-6 rounded-2xl"
               style={{ background: "linear-gradient(145deg, rgba(16,26,46,0.98), rgba(9,15,28,1))", border: "1px solid rgba(255,255,255,0.09)", boxShadow: "0 0 0 1px rgba(255,255,255,0.03) inset, 0 30px 80px rgba(0,0,0,0.5), 0 0 50px rgba(224,93,56,0.04)" }}>
               <h3 className="text-white font-bold text-base mb-4" style={{ fontFamily: "var(--font-heading)" }}>Send a Message</h3>
-              <form noValidate aria-label="Finance enquiry form" className="space-y-3">
+              {status === "success" ? (
+                <div className="flex flex-col items-center justify-center gap-3 py-10 text-center">
+                  <CheckCircle className="w-10 h-10 text-orange-400" strokeWidth={1.5} />
+                  <p className="text-white font-bold text-base" style={{ fontFamily: "var(--font-heading)" }}>Message Sent!</p>
+                  <p className="text-white/45 text-sm">Moe will be in touch shortly.</p>
+                  <button onClick={() => setStatus("idle")} className="mt-2 text-orange-400/70 text-xs underline underline-offset-2">Send another</button>
+                </div>
+              ) : (
+              <form noValidate aria-label="Finance enquiry form" className="space-y-3" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div><label htmlFor={ids.first} className="text-white/35 text-[10px] uppercase tracking-widest mb-1.5 block">First Name</label><Input id={ids.first} name="firstName" autoComplete="given-name" placeholder="First name" /></div>
                   <div><label htmlFor={ids.last} className="text-white/35 text-[10px] uppercase tracking-widest mb-1.5 block">Last Name</label><Input id={ids.last} name="lastName" autoComplete="family-name" placeholder="Last name" /></div>
@@ -133,13 +160,16 @@ export function ContactSection() {
                     onFocus={e => { e.currentTarget.style.border = "1px solid rgba(224,93,56,0.5)"; e.currentTarget.style.background = "rgba(255,255,255,0.09)"; }}
                     onBlur={e => { e.currentTarget.style.border = "1px solid rgba(255,255,255,0.10)"; e.currentTarget.style.background = "rgba(255,255,255,0.065)"; }} />
                 </div>
-                <button type="submit" className="btn-shine relative overflow-hidden w-full py-3.5 rounded-xl font-bold text-white flex items-center justify-center gap-2 group"
+                <button type="submit" disabled={status === "submitting"}
+                  className="btn-shine relative overflow-hidden w-full py-3.5 rounded-xl font-bold text-white flex items-center justify-center gap-2 group disabled:opacity-60 disabled:cursor-not-allowed"
                   style={{ background: "linear-gradient(135deg, #e05d38 0%, #c94822 100%)", boxShadow: "0 0 30px rgba(224,93,56,0.22), 0 1px 0 rgba(255,255,255,0.10) inset, 0 6px 20px rgba(0,0,0,0.25)", fontSize: "16px", minHeight: "48px" }}>
-                  Start The Conversation
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" aria-hidden />
+                  {status === "submitting" ? "Sending…" : "Start The Conversation"}
+                  {status !== "submitting" && <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" aria-hidden />}
                 </button>
-                <p className="text-white/25 text-xs text-center">No commitment required — just a conversation.</p>
+                {status === "error" && <p className="text-red-400 text-xs text-center">Something went wrong, please try again.</p>}
+                <p className="text-white/25 text-xs text-center">No commitment required{" — "}just a conversation.</p>
               </form>
+              )}
             </div>
           </motion.div>
         </div>

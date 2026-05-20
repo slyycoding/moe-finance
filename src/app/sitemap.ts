@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const BASE = "https://fastlendinggroup.com.au";
+const BASE = "https://moefinancial.com.au";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
