@@ -36,7 +36,7 @@ const lenders: LenderDef[] = [
   { name: "Aust. Lending Ctr", slug: "alc",          lightBg: true }, // navy wordmark → needs light bg
 ];
 
-const vp = { once: false, amount: 0.3 } as const;
+const vp = { once: true, amount: 0.3 } as const;
 
 export function LendersSection() {
   return (

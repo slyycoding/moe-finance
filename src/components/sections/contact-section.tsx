@@ -24,7 +24,7 @@ function Input({ id, type = "text", name, autoComplete, placeholder }: { id: str
   );
 }
 
-const vp = { once: false, amount: 0.1 } as const;
+const vp = { once: true, amount: 0.1 } as const;
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -53,7 +53,7 @@ export function ContactSection() {
     <div className="relative bg-[#080d18] py-12 sm:py-14 md:py-16 px-4">
       <div aria-hidden className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="w-[50%] h-[60%] rounded-full"
-          style={{ background: "radial-gradient(ellipse, rgba(224,93,56,0.06) 0%, transparent 70%)", filter: "blur(70px)" }} />
+          style={{ background: "radial-gradient(ellipse, rgba(224,93,56,0.05) 0%, transparent 70%)", filter: "blur(40px)" }} />
       </div>
 
       <div className="container mx-auto relative z-10">
@@ -122,7 +122,7 @@ export function ContactSection() {
           <motion.div initial={{ opacity: 0, x: r ? 0 : 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={vp}
             transition={{ duration: 0.7 }} className="relative">
             <div aria-hidden className="absolute -inset-2 rounded-3xl pointer-events-none"
-              style={{ background: "radial-gradient(ellipse at 50% -10%, rgba(224,93,56,0.08) 0%, transparent 65%)", filter: "blur(16px)" }} />
+              style={{ background: "radial-gradient(ellipse at 50% -10%, rgba(224,93,56,0.06) 0%, transparent 65%)", filter: "blur(12px)" }} />
             <div className="relative p-5 sm:p-6 rounded-2xl"
               style={{ background: "linear-gradient(145deg, rgba(16,26,46,0.98), rgba(9,15,28,1))", border: "1px solid rgba(255,255,255,0.09)", boxShadow: "0 0 0 1px rgba(255,255,255,0.03) inset, 0 30px 80px rgba(0,0,0,0.5), 0 0 50px rgba(224,93,56,0.04)" }}>
               <h3 className="text-white font-bold text-base mb-4" style={{ fontFamily: "var(--font-heading)" }}>Send a Message</h3>

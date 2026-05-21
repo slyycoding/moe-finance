@@ -183,14 +183,26 @@
 /* ─── Reduced motion — disable all animations ───────────── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    animation: none !important;
+    transition: none !important;
     scroll-behavior: auto !important;
   }
 
   .grain::after {
     display: none;
+  }
+}
+
+/* ─── Mobile performance ────────────────────────────────── */
+@media (max-width: 767px) {
+  /* Disable expensive grain animation on mobile */
+  .grain::after {
+    display: none;
+  }
+
+  /* Cap blur radius — compositor cost scales with blur radius */
+  * {
+    --tw-backdrop-blur: blur(8px) !important;
   }
 }
 

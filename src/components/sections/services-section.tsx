@@ -36,7 +36,7 @@ const ac: Record<string, { icon: string; border: string; glow: string; bg: strin
   green:  { icon: "text-green-400",  border: "border-green-500/20",  glow: "rgba(34,197,94,0.09)",   bg: "bg-green-500/[0.08]" },
 };
 
-const vp = { once: false, amount: 0.15 } as const;
+const vp = { once: true, amount: 0.15 } as const;
 
 export function ServicesSection() {
   const r = useReducedMotion();
@@ -46,7 +46,7 @@ export function ServicesSection() {
     <div className="relative bg-[#080d18] py-12 sm:py-14 md:py-16 px-4">
       <div aria-hidden className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="w-[50%] h-48 rounded-full"
-          style={{ background: "radial-gradient(ellipse, rgba(59,130,246,0.04) 0%, transparent 70%)", filter: "blur(60px)" }} />
+          style={{ background: "radial-gradient(ellipse, rgba(59,130,246,0.04) 0%, transparent 70%)", filter: "blur(30px)" }} />
       </div>
 
       <div className="container mx-auto">

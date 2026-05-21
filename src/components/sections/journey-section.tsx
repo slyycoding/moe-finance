@@ -22,7 +22,7 @@ export function JourneySection() {
       className="relative bg-[#060b16] py-16 sm:py-20 md:py-24 px-4 overflow-hidden">
       <div aria-hidden className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-96 rounded-full"
-          style={{ background: "radial-gradient(ellipse, rgba(224,93,56,0.08) 0%, transparent 65%)", filter: "blur(80px)" }} />
+          style={{ background: "radial-gradient(ellipse, rgba(224,93,56,0.07) 0%, transparent 65%)", filter: "blur(40px)" }} />
       </div>
 
       <div className="container mx-auto relative z-10">
@@ -50,11 +50,11 @@ export function JourneySection() {
                 <motion.li key={step.n}
                   initial={{ opacity: 0, x: r ? 0 : -40 }}
                   animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: r ? 0 : -40 }}
-                  transition={{ delay: 0.15 + i * 0.12, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                  transition={{ delay: 0.1 + i * 0.08, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                   className="flex gap-4 sm:gap-6 group">
                   <div className="flex-shrink-0 relative z-10">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl border flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
-                      style={{ background: `${step.accent}18`, borderColor: `${step.accent}40`, boxShadow: `0 0 24px ${step.accent}18` }}>
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl border flex items-center justify-center group-hover:scale-105 transition-transform duration-200"
+                      style={{ background: `${step.accent}18`, borderColor: `${step.accent}40` }}>
                       <Icon className="w-5 h-5 sm:w-6 sm:h-6" style={{ color: step.accent }} strokeWidth={1.5} aria-hidden />
                     </div>
                   </div>

@@ -5,19 +5,19 @@ import { Share2, AtSign, PlayCircle, Link2, ArrowRight } from "lucide-react";
 
 const links = [
   { label: "Services", items: [{ title: "Automotive Finance", href: "#services" }, { title: "Business Loans", href: "#services" }, { title: "Personal Loans", href: "#services" }, { title: "Equipment Finance", href: "#services" }]},
-  { label: "Company",  items: [{ title: "About Moe", href: "#about" }, { title: "Testimonials", href: "#testimonials" }, { title: "Contact", href: "#contact" }, { title: "Google Reviews", href: "#" }]},
+  { label: "Company",  items: [{ title: "About Moe", href: "#about" }, { title: "Testimonials", href: "#testimonials" }, { title: "Contact", href: "#contact" }]},
   { label: "Social",   items: [{ title: "Facebook", href: "#", icon: Share2 }, { title: "Instagram", href: "#", icon: AtSign }, { title: "YouTube", href: "#", icon: PlayCircle }, { title: "LinkedIn", href: "#", icon: Link2 }]},
 ];
 
-const vp = { once: false, amount: 0.2 } as const;
+const vp = { once: true, amount: 0.2 } as const;
 
 export function FooterSection() {
   return (
     <footer className="bg-[#060b16] border-t border-white/[0.05] px-4 py-12 sm:py-14">
       <div className="container mx-auto">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-12">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={vp}
-            transition={{ duration: 0.55 }} className="col-span-2 sm:col-span-1 space-y-4">
+          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={vp}
+            transition={{ duration: 0.45 }} className="col-span-2 sm:col-span-1 space-y-4">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
                 style={{ background: "linear-gradient(135deg, #e05d38, #c94822)" }} aria-hidden>
@@ -25,17 +25,17 @@ export function FooterSection() {
               </div>
               <div>
                 <p className="text-white font-bold text-sm leading-tight" style={{ fontFamily: "var(--font-heading)" }}>Moe</p>
-                <p className="text-orange-400/60 text-[10px] tracking-[0.25em] uppercase">Fast Lending Group</p>
+                <p className="text-orange-400/60 text-[10px] tracking-[0.25em] uppercase">Finance Broker</p>
               </div>
             </div>
             <p className="text-white/38 text-xs leading-relaxed">Melbourne&apos;s trusted finance broker — car finance, business loans, equipment finance and more across Australia since 2021.</p>
-            <p className="text-white/18 text-[10px]">© {new Date().getFullYear()} Fast Lending Group. All rights reserved.</p>
+            <p className="text-white/18 text-[10px]">© {new Date().getFullYear()} Moe Financial. All rights reserved.</p>
           </motion.div>
 
           {links.map((section, i) => (
             <motion.div key={section.label}
-              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={vp}
-              transition={{ delay: 0.07 * (i + 1), duration: 0.55 }}>
+              initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={vp}
+              transition={{ delay: 0.06 * (i + 1), duration: 0.45 }}>
               <p className="text-white/28 text-[10px] uppercase tracking-[0.25em] mb-4">{section.label}</p>
               <nav aria-label={`${section.label} links`}>
                 <ul className="space-y-2.5 list-none" role="list">
@@ -59,7 +59,7 @@ export function FooterSection() {
         </div>
 
         <div className="border-t border-white/[0.05] pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <p className="text-white/18 text-[10px] max-w-sm leading-relaxed">Finance broking services only — not a lender. Always read terms before signing. Fast Lending Group, Melbourne VIC.</p>
+          <p className="text-white/18 text-[10px] max-w-sm leading-relaxed">Finance broking services only — not a lender. Always read terms before signing. Moe Financial, Melbourne VIC.</p>
           <a href="#contact" aria-label="Get pre-approved for finance"
             className="flex-shrink-0 inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-white/8 text-white/35 hover:text-white/70 hover:border-white/16 text-xs font-medium tracking-wide transition-all duration-200 group" style={{ minHeight: "40px" }}>
             Get Pre-Approved

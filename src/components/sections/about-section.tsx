@@ -7,7 +7,7 @@ const timeline = [
   { year: "Pre-2021", label: "Hospitality Career",  desc: "Managed cafés, operated venues, worked in hotel management. Built exceptional people and communication skills." },
   { year: "2021",     label: "Entered Finance",      desc: "Joined one of Australia's major automotive dealership groups as a finance trainee." },
   { year: "6 months", label: "Fully Qualified",      desc: "Became a qualified Business Manager — rapidly building a reputation for deal-making and problem-solving." },
-  { year: "Dec 2022", label: "Went Independent",     desc: "Launched Fast Lending Group — a finance broker business built on trust, relationships and results." },
+  { year: "Dec 2022", label: "Went Independent",     desc: "Launched his own finance brokerage — built on trust, relationships and results." },
   { year: "Today",    label: "500+ Clients Served",  desc: "65+ lender relationships. Bilingual EN/AR. Referral-driven. Melbourne's most connected broker." },
 ];
 
@@ -17,14 +17,14 @@ const differentiators = [
   { icon: TrendingUp, title: "Outside-Policy Expert",   desc: "Specialises in structuring deals other brokers walk away from — bad credit, self-employed, complex income." },
 ];
 
-const vp = { once: false, amount: 0.15 } as const;
+const vp = { once: true, amount: 0.15 } as const;
 
 export function AboutSection() {
   const r = useReducedMotion();
   return (
     <div className="relative bg-[#080d18] py-16 sm:py-20 md:py-24 px-4 overflow-hidden">
       <div aria-hidden className="absolute top-0 right-0 w-80 h-80 rounded-full pointer-events-none hidden sm:block"
-        style={{ background: "radial-gradient(circle, rgba(224,93,56,0.07) 0%, transparent 70%)", filter: "blur(60px)" }} />
+        style={{ background: "radial-gradient(circle, rgba(224,93,56,0.06) 0%, transparent 70%)", filter: "blur(30px)" }} />
       <div className="container mx-auto">
 
         <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={vp}

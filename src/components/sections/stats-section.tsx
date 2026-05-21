@@ -45,16 +45,16 @@ export function StatsSection() {
       <div aria-hidden className="glow-line w-full absolute top-0" />
       <div aria-hidden className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="w-[60%] h-48 rounded-full"
-          style={{ background: "radial-gradient(ellipse, rgba(224,93,56,0.06) 0%, transparent 70%)", filter: "blur(30px)" }} />
+          style={{ background: "radial-gradient(ellipse, rgba(224,93,56,0.05) 0%, transparent 70%)", filter: "blur(20px)" }} />
       </div>
       <div className="container mx-auto px-4">
         <dl className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/5 border border-white/5 rounded-2xl overflow-hidden">
           {stats.map(({ Icon, value, suffix, label, sub }, i) => (
             <motion.div key={label}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.3 }}
-              transition={{ delay: i * 0.08, duration: 0.5 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ delay: i * 0.06, duration: 0.45 }}
               className="flex flex-col items-center text-center px-4 sm:px-8 py-8 sm:py-12 bg-[#080d18] hover:bg-[#0d1423] transition-colors duration-500 group relative overflow-hidden">
               <div aria-hidden className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                 style={{ background: "radial-gradient(circle at center, rgba(224,93,56,0.07) 0%, transparent 70%)" }} />

@@ -21,8 +21,8 @@ const SITE_URL = "https://moefinancial.com.au";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Moe | Finance Broker Melbourne — Fast Lending Group",
-    template: "%s | Fast Lending Group",
+    default: "Moe | Finance Broker Melbourne — Moe Financial",
+    template: "%s | Moe Financial",
   },
   description:
     "Mohammed Elsayyed (Moe) is Melbourne's most trusted finance broker. Car finance, business loans, equipment finance, personal loans, and credit-impaired lending — 500+ clients helped across Australia.",
@@ -35,13 +35,13 @@ export const metadata: Metadata = {
     "commercial lending Melbourne",
     "self-employed finance broker",
     "bad credit finance Melbourne",
-    "Fast Lending Group",
+    "Moe Financial",
     "Mohammed Elsayyed finance broker",
     "Moe finance broker",
   ],
   authors: [{ name: "Mohammed Elsayyed", url: SITE_URL }],
-  creator: "Fast Lending Group",
-  publisher: "Fast Lending Group",
+  creator: "Moe Financial",
+  publisher: "Moe Financial",
   robots: {
     index: true,
     follow: true,
@@ -52,8 +52,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_AU",
     url: SITE_URL,
-    siteName: "Fast Lending Group",
-    title: "Moe | Finance Broker Melbourne — Fast Lending Group",
+    siteName: "Moe Financial",
+    title: "Moe | Finance Broker Melbourne — Moe Financial",
     description:
       "500+ Australians helped. 65+ lender partners. Car finance, business loans, equipment finance and credit-impaired lending — Melbourne's most trusted finance broker.",
     images: [
@@ -61,13 +61,13 @@ export const metadata: Metadata = {
         url: `${SITE_URL}/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: "Fast Lending Group — Melbourne Finance Broker",
+        alt: "Moe Financial — Melbourne Finance Broker",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Moe | Finance Broker Melbourne — Fast Lending Group",
+    title: "Moe | Finance Broker Melbourne — Moe Financial",
     description:
       "500+ clients helped. 65+ lenders. Car finance, business loans, equipment finance and more across Australia.",
     images: [`${SITE_URL}/og-image.jpg`],
@@ -80,8 +80,8 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "FinancialService",
-  name: "Fast Lending Group",
-  alternateName: ["Moe Finance", "Fast Lending Group Melbourne"],
+  name: "Moe Financial",
+  alternateName: ["Moe Finance", "Moe Financial Melbourne"],
   description:
     "Melbourne-based finance broker Mohammed Elsayyed (Moe) helps Australians access automotive finance, business loans, equipment finance, personal loans, commercial lending, and credit-impaired lending solutions through 65+ lender partners.",
   url: SITE_URL,
@@ -121,7 +121,6 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col bg-[#080d18] text-white overflow-x-hidden">
-        {/* Skip to main content for keyboard users */}
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-orange-500 focus:text-white focus:font-semibold focus:text-sm focus:shadow-lg"

@@ -11,7 +11,7 @@ const testimonials = [
   { id: "t-4", name: "Nadia R.",  profession: "Small Business Owner", rating: 5, quote: "Moe helped me get a business loan when my credit wasn't perfect. He never gives up on finding a solution. He's become my go-to contact for everything finance.", avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop&q=80" },
 ];
 
-const vp = { once: false, amount: 0.2 } as const;
+const vp = { once: true, amount: 0.2 } as const;
 
 export function TestimonialsSection() {
   const [[index, dir], setPage] = useState([0, 1]);
@@ -40,7 +40,7 @@ export function TestimonialsSection() {
     <div className="relative bg-[#080d18] py-16 sm:py-20 md:py-24 px-4">
       <div aria-hidden className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="w-full max-w-xl h-80 rounded-full"
-          style={{ background: "radial-gradient(ellipse, rgba(224,93,56,0.07) 0%, transparent 70%)", filter: "blur(60px)" }} />
+          style={{ background: "radial-gradient(ellipse, rgba(224,93,56,0.06) 0%, transparent 70%)", filter: "blur(30px)" }} />
       </div>
 
       <div className="container mx-auto">
@@ -70,9 +70,9 @@ export function TestimonialsSection() {
                 transition={{ duration: 0.42, ease: [0.32, 0.72, 0, 1] }}
                 aria-label={`Testimonial from ${t.name}, ${t.profession}`}
                 className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 sm:px-12 md:px-16 py-10 sm:py-12 rounded-3xl border border-white/10 bg-[#0c1525]"
-                style={{ boxShadow: "0 0 80px rgba(224,93,56,0.08), 0 30px 80px rgba(0,0,0,0.3)" }}>
-                <div aria-hidden className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-24 rounded-full pointer-events-none"
-                  style={{ background: "radial-gradient(ellipse, rgba(224,93,56,0.10) 0%, transparent 70%)", filter: "blur(20px)" }} />
+                style={{ boxShadow: "0 20px 60px rgba(0,0,0,0.3)" }}>
+                <div aria-hidden className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-16 rounded-full pointer-events-none"
+                  style={{ background: "radial-gradient(ellipse, rgba(224,93,56,0.07) 0%, transparent 70%)", filter: "blur(16px)" }} />
                 <div aria-label={`${t.rating} out of 5 stars`} className="flex items-center gap-1 mb-5">
                   {Array.from({ length: t.rating }).map((_, i) => (
                     <Star key={i} className="w-4 h-4 fill-orange-400 text-orange-400" aria-hidden />

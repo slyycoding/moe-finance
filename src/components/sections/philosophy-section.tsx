@@ -9,7 +9,7 @@ const cards = [
   { icon: BarChart3, title: "Need another chance?",          desc: "Credit challenges aren't dead ends. Moe specialises in outside-policy deals others walk away from.", accent: "#a855f7" },
 ];
 
-const vp = { once: false, amount: 0.2 } as const;
+const vp = { once: true, amount: 0.2 } as const;
 
 export function PhilosophySection() {
   const r = useReducedMotion();
@@ -18,7 +18,7 @@ export function PhilosophySection() {
       <div aria-hidden className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 flex items-start justify-center pt-16">
           <div className="w-full max-w-2xl h-96 rounded-full"
-            style={{ background: "radial-gradient(ellipse at center, rgba(224,93,56,0.13) 0%, rgba(224,93,56,0.04) 40%, transparent 70%)", filter: "blur(50px)" }} />
+            style={{ background: "radial-gradient(ellipse at center, rgba(224,93,56,0.10) 0%, rgba(224,93,56,0.03) 40%, transparent 70%)", filter: "blur(30px)" }} />
         </div>
         <div className="absolute inset-0 opacity-[0.018] hidden sm:block"
           style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
@@ -29,7 +29,7 @@ export function PhilosophySection() {
           transition={{ duration: 0.8 }} className="max-w-[860px] mx-auto text-center mb-6">
           <div aria-hidden className="mb-8 flex justify-center">
             <span className="text-[80px] sm:text-[100px] leading-none font-serif select-none"
-              style={{ background: "linear-gradient(180deg, rgba(224,93,56,0.6) 0%, rgba(224,93,56,0.1) 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", filter: "drop-shadow(0 0 24px rgba(224,93,56,0.3))", lineHeight: "0.7" }}>
+              style={{ background: "linear-gradient(180deg, rgba(224,93,56,0.55) 0%, rgba(224,93,56,0.1) 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", lineHeight: "0.7" }}>
               &ldquo;
             </span>
           </div>
@@ -37,12 +37,12 @@ export function PhilosophySection() {
             <blockquote className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 relative z-10"
               style={{ fontFamily: "var(--font-heading)", lineHeight: "1.1", letterSpacing: "-0.02em" }}>
               With Moe, it&apos;s never simply a{" "}
-              <span style={{ background: "linear-gradient(135deg, #ff8c5a 0%, #e05d38 50%, #ff6b35 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", filter: "drop-shadow(0 0 16px rgba(224,93,56,0.4))" }}>&lsquo;no&rsquo;</span>{" "}
+              <span style={{ background: "linear-gradient(135deg, #ff8c5a 0%, #e05d38 50%, #ff6b35 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", filter: "drop-shadow(0 0 8px rgba(224,93,56,0.2))" }}>&lsquo;no&rsquo;</span>{" "}
               — there is always an{" "}
-              <span style={{ background: "linear-gradient(135deg, #ff8c5a 0%, #e05d38 50%, #ff6b35 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", filter: "drop-shadow(0 0 16px rgba(224,93,56,0.4))" }}>option, strategy or pathway</span>{" "}
+              <span style={{ background: "linear-gradient(135deg, #ff8c5a 0%, #e05d38 50%, #ff6b35 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", filter: "drop-shadow(0 0 8px rgba(224,93,56,0.2))" }}>option, strategy or pathway</span>{" "}
               worth exploring.
             </blockquote>
-            <figcaption className="text-white/35 text-xs tracking-[0.3em] uppercase">— The Fast Lending Group Philosophy</figcaption>
+            <figcaption className="text-white/35 text-xs tracking-[0.3em] uppercase">— The Moe Financial Philosophy</figcaption>
           </figure>
         </motion.div>
 
