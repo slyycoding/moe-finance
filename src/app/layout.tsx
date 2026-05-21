@@ -16,7 +16,7 @@ const jakarta = Plus_Jakarta_Sans({
   display: "swap",
 });
 
-const SITE_URL = "https://fastlendinggroup.com.au";
+const SITE_URL = "https://moefinancial.com.au";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

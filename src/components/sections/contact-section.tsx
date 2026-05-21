@@ -7,8 +7,8 @@ import { useId, useState } from "react";
 const loanTypes = ["Car Finance","Business Loan","Equipment Finance","Personal Loan","Home Loan Referral","Credit Impaired Lending","Not Sure Yet"];
 
 const contactDetails = [
-  { icon: Phone,  label: "Call or Text",   value: "Contact Moe directly",         sub: "Same-day response" },
-  { icon: Mail,   label: "Email",          value: "hello@fastlendinggroup.com.au", sub: null },
+  { icon: Phone,  label: "Call or Text",   value: "+61 481 293 395",              sub: "Same-day response" },
+  { icon: Mail,   label: "Email",          value: "moe.sayyed@gmail.com",          sub: null },
   { icon: MapPin, label: "Location",       value: "Melbourne, Victoria",           sub: "Australia-wide" },
   { icon: Star,   label: "Google Reviews", value: "Search Fast Lending Group",     sub: null },
 ];
