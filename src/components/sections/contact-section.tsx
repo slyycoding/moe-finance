@@ -136,6 +136,7 @@ export function ContactSection() {
                 </div>
               ) : (
               <form noValidate aria-label="Finance enquiry form" className="space-y-3" onSubmit={handleSubmit}>
+                <input type="hidden" name="_subject" value="New Finance Enquiry — Moe Financial" />
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div><label htmlFor={ids.first} className="text-white/35 text-[10px] uppercase tracking-widest mb-1.5 block">First Name</label><Input id={ids.first} name="firstName" autoComplete="given-name" placeholder="First name" /></div>
                   <div><label htmlFor={ids.last} className="text-white/35 text-[10px] uppercase tracking-widest mb-1.5 block">Last Name</label><Input id={ids.last} name="lastName" autoComplete="family-name" placeholder="Last name" /></div>

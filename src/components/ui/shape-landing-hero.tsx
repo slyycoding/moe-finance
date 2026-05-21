@@ -35,8 +35,8 @@ const upFade: Variants = {
   visible: (i: number) => ({ opacity: 1, y: 0, transition: { duration: 0.7, delay: 0.65 + i * 0.12, ease: "easeOut" } }),
 };
 
-export function HeroGeometric({ badge = "Fast Lending Group", title1 = "Finance Made", title2 = "Personal" }: {
-  badge?: string; title1?: string; title2?: string;
+export function HeroGeometric({ title1 = "Finance Made", title2 = "Personal" }: {
+  title1?: string; title2?: string;
 }) {
   const r = useReducedMotion();
   return (
@@ -56,12 +56,6 @@ export function HeroGeometric({ badge = "Fast Lending Group", title1 = "Finance 
         style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)", backgroundSize: "90px 90px" }} />
 
       <div className="relative z-10 w-full max-w-5xl mx-auto text-center flex flex-col items-center">
-        <motion.div custom={0} variants={upFade} initial={r ? "visible" : "hidden"} animate="visible"
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] mb-8 md:mb-10">
-          <span aria-hidden className="w-1.5 h-1.5 rounded-full bg-orange-400 animate-pulse" />
-          <span className="text-xs text-white/50 tracking-[0.2em] uppercase" style={{ fontFamily: "var(--font-body)" }}>{badge}</span>
-        </motion.div>
-
         <h1 className="font-extrabold leading-none tracking-tight uppercase mb-6 overflow-hidden"
           style={{ fontFamily: "var(--font-heading)", letterSpacing: "-0.03em" }}>
           <motion.span custom={0} variants={lineFade} initial={r ? "visible" : "hidden"} animate="visible"

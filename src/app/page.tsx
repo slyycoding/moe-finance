@@ -21,7 +21,6 @@ export default function Home() {
         {/* Hero — contains the only H1 on the page */}
         <section aria-label="Hero — Finance Made Personal">
           <HeroGeometric
-            badge="Fast Lending Group"
             title1="Finance Made"
             title2="Personal"
           />
