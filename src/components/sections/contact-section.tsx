@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { Phone, Mail, MapPin, Star, ArrowRight, Users, Building2, MapPinned, Globe, CheckCircle } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowRight, Users, Building2, MapPinned, Globe, CheckCircle } from "lucide-react";
 import { useId, useState } from "react";
 
 const loanTypes = ["Car Finance","Business Loan","Equipment Finance","Personal Loan","Home Loan Referral","Credit Impaired Lending","Not Sure Yet"];
@@ -10,7 +10,6 @@ const contactDetails = [
   { icon: Phone,  label: "Call or Text",   value: "+61 481 293 395",              sub: "Same-day response" },
   { icon: Mail,   label: "Email",          value: "moe.sayyed@gmail.com",          sub: null },
   { icon: MapPin, label: "Location",       value: "Melbourne, Victoria",           sub: "Australia-wide" },
-  { icon: Star,   label: "Google Reviews", value: "Search Fast Lending Group",     sub: null },
 ];
 
 const inputBase: React.CSSProperties = { background: "rgba(255,255,255,0.065)", border: "1px solid rgba(255,255,255,0.10)", fontSize: "16px" };
