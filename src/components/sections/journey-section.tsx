@@ -13,23 +13,22 @@ const steps = [
 
 export function JourneySection() {
   const ref = useRef<HTMLElement>(null);
-  // once: false — re-triggers as user scrolls back up
-  const inView = useInView(ref, { once: false, margin: "-80px 0px" });
+  const inView = useInView(ref, { once: true, margin: "-60px 0px" });
   const r = useReducedMotion();
 
   return (
     <section ref={ref} aria-label="Application to approval process"
       className="relative bg-[#060b16] py-16 sm:py-20 md:py-24 px-4 overflow-hidden">
-      <div aria-hidden className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-96 rounded-full"
-          style={{ background: "radial-gradient(ellipse, rgba(224,93,56,0.07) 0%, transparent 65%)", filter: "blur(40px)" }} />
+      <div aria-hidden className="absolute inset-0 pointer-events-none hidden sm:block">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl h-72 rounded-full"
+          style={{ background: "radial-gradient(ellipse, rgba(224,93,56,0.06) 0%, transparent 65%)", filter: "blur(40px)" }} />
       </div>
 
       <div className="container mx-auto relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-12 sm:mb-16">
           <p className="text-orange-400/70 text-xs font-semibold tracking-[0.3em] uppercase mb-4">The Process</p>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-none"
@@ -48,18 +47,18 @@ export function JourneySection() {
               const Icon = step.icon;
               return (
                 <motion.li key={step.n}
-                  initial={{ opacity: 0, x: r ? 0 : -40 }}
-                  animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: r ? 0 : -40 }}
-                  transition={{ delay: 0.1 + i * 0.08, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                  initial={{ opacity: 0, x: r ? 0 : -24 }}
+                  animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: r ? 0 : -24 }}
+                  transition={{ delay: 0.08 + i * 0.07, duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
                   className="flex gap-4 sm:gap-6 group">
                   <div className="flex-shrink-0 relative z-10">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl border flex items-center justify-center group-hover:scale-105 transition-transform duration-200"
-                      style={{ background: `${step.accent}18`, borderColor: `${step.accent}40` }}>
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl border flex items-center justify-center"
+                      style={{ background: `${step.accent}15`, borderColor: `${step.accent}35` }}>
                       <Icon className="w-5 h-5 sm:w-6 sm:h-6" style={{ color: step.accent }} strokeWidth={1.5} aria-hidden />
                     </div>
                   </div>
-                  <div className="flex-1 min-w-0 p-5 sm:p-6 rounded-2xl border border-white/8 bg-[#0a1120] group-hover:border-orange-500/20 transition-all duration-300 group-hover:bg-[#0d1528]"
-                    style={{ boxShadow: "0 4px 40px rgba(0,0,0,0.25)" }}>
+                  <div className="flex-1 min-w-0 p-5 sm:p-6 rounded-2xl border border-white/8 bg-[#0a1120]"
+                    style={{ boxShadow: "0 2px 16px rgba(0,0,0,0.2)" }}>
                     <div className="flex items-center gap-3 mb-1.5">
                       <span aria-hidden className="text-orange-400/30 text-xs font-bold tracking-widest">{step.n}</span>
                       <h3 className="text-white font-bold text-base sm:text-lg" style={{ fontFamily: "var(--font-heading)" }}>{step.title}</h3>
@@ -73,13 +72,13 @@ export function JourneySection() {
         </ol>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ delay: r ? 0 : 0.75, duration: 0.6 }}
+          initial={{ opacity: 0, y: 16 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
+          transition={{ delay: r ? 0 : 0.45, duration: 0.5 }}
           className="text-center mt-12 sm:mt-14">
           <a href="#contact" aria-label="Start your finance journey with Moe"
             className="btn-shine relative inline-flex items-center gap-2 px-8 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-white text-base overflow-hidden"
-            style={{ background: "linear-gradient(135deg, #e05d38, #c94822)", boxShadow: "0 0 60px rgba(224,93,56,0.28), 0 20px 40px rgba(0,0,0,0.3)", minHeight: "52px" }}>
+            style={{ background: "linear-gradient(135deg, #e05d38, #c94822)", boxShadow: "0 0 40px rgba(224,93,56,0.22), 0 12px 30px rgba(0,0,0,0.25)", minHeight: "52px" }}>
             Start Your Journey
             <ArrowRight className="w-4 h-4" aria-hidden />
           </a>

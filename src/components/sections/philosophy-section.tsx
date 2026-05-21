@@ -20,8 +20,8 @@ export function PhilosophySection() {
           <div className="w-full max-w-2xl h-96 rounded-full"
             style={{ background: "radial-gradient(ellipse at center, rgba(224,93,56,0.10) 0%, rgba(224,93,56,0.03) 40%, transparent 70%)", filter: "blur(30px)" }} />
         </div>
-        <div className="absolute inset-0 opacity-[0.018] hidden sm:block"
-          style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px)", backgroundSize: "60px 60px" }} />
+        <div className="absolute inset-0 opacity-[0.015] hidden md:block"
+          style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)", backgroundSize: "80px 80px" }} />
       </div>
 
       <div className="container mx-auto relative z-10">
@@ -37,9 +37,9 @@ export function PhilosophySection() {
             <blockquote className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 relative z-10"
               style={{ fontFamily: "var(--font-heading)", lineHeight: "1.1", letterSpacing: "-0.02em" }}>
               With Moe, it&apos;s never simply a{" "}
-              <span style={{ background: "linear-gradient(135deg, #ff8c5a 0%, #e05d38 50%, #ff6b35 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", filter: "drop-shadow(0 0 8px rgba(224,93,56,0.2))" }}>&lsquo;no&rsquo;</span>{" "}
+              <span style={{ background: "linear-gradient(135deg, #ff8c5a 0%, #e05d38 50%, #ff6b35 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", filter: undefined }}>&lsquo;no&rsquo;</span>{" "}
               — there is always an{" "}
-              <span style={{ background: "linear-gradient(135deg, #ff8c5a 0%, #e05d38 50%, #ff6b35 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", filter: "drop-shadow(0 0 8px rgba(224,93,56,0.2))" }}>option, strategy or pathway</span>{" "}
+              <span style={{ background: "linear-gradient(135deg, #ff8c5a 0%, #e05d38 50%, #ff6b35 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", filter: undefined }}>option, strategy or pathway</span>{" "}
               worth exploring.
             </blockquote>
             <figcaption className="text-white/35 text-xs tracking-[0.3em] uppercase">— The Moe Financial Philosophy</figcaption>
@@ -57,7 +57,7 @@ export function PhilosophySection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={vp}
                 transition={{ delay: i * 0.12, duration: 0.55 }}
-                whileHover={r ? {} : { y: -7, transition: { duration: 0.22 } }}
+                whileHover={r ? {} : { y: -4, transition: { duration: 0.18 } }}
                 className="relative group rounded-2xl overflow-hidden"
                 style={{ background: "rgba(12, 20, 38, 0.85)", border: "1px solid rgba(255,255,255,0.12)", boxShadow: "0 20px 60px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.05) inset", padding: "40px 36px" }}>
                 <div aria-hidden className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl"

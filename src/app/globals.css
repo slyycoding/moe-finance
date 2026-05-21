@@ -102,19 +102,17 @@
     font-family: var(--font-heading), ui-sans-serif, system-ui, sans-serif;
   }
 
-  /* Prevent iOS input zoom — must be ≥16px */
+  /* Prevent iOS input zoom */
   input, select, textarea {
     font-size: 16px !important;
   }
 
-  /* Accessible focus ring — visible to keyboard users, hidden for mouse */
   :focus-visible {
     outline: 2px solid #e05d38;
     outline-offset: 3px;
     border-radius: 4px;
   }
 
-  /* Override for elements that have their own focus style */
   button:focus-visible,
   a:focus-visible {
     outline: 2px solid #e05d38;
@@ -122,7 +120,6 @@
     border-radius: 6px;
   }
 
-  /* Fix tap highlight on mobile */
   button, a {
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
@@ -130,31 +127,18 @@
 }
 
 /* ─── Grain noise overlay ───────────────────────────────── */
+/*
+ * Static grain — no animation. A static fixed layer costs almost nothing;
+ * the animated version (200%×200% translate) was eating GPU memory.
+ */
 .grain::after {
   content: '';
   position: fixed;
-  inset: -50%;
-  width: 200%;
-  height: 200%;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  opacity: 0.025;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.02;
   pointer-events: none;
   z-index: 9999;
-  animation: grain-shift 8s steps(10) infinite;
-}
-
-@keyframes grain-shift {
-  0%   { transform: translate(0%, 0%) }
-  10%  { transform: translate(-5%, -10%) }
-  20%  { transform: translate(-15%, 5%) }
-  30%  { transform: translate(7%, -15%) }
-  40%  { transform: translate(-5%, 20%) }
-  50%  { transform: translate(-20%, 10%) }
-  60%  { transform: translate(15%, 0%) }
-  70%  { transform: translate(0%, 10%) }
-  80%  { transform: translate(3%, -5%) }
-  90%  { transform: translate(-10%, 10%) }
-  100% { transform: translate(0%, 0%) }
 }
 
 /* ─── Button shine ──────────────────────────────────────── */
@@ -162,11 +146,11 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.16), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.14), transparent);
   transform: translateX(-100%) skewX(-15deg);
 }
 .btn-shine:hover::after {
-  animation: shine 0.65s ease forwards;
+  animation: shine 0.6s ease forwards;
 }
 
 @keyframes shine {
@@ -180,33 +164,32 @@
   background: linear-gradient(90deg, transparent, rgba(224,93,56,0.4), transparent);
 }
 
-/* ─── Reduced motion — disable all animations ───────────── */
+/* ─── Reduced motion ────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation: none !important;
     transition: none !important;
     scroll-behavior: auto !important;
   }
-
-  .grain::after {
-    display: none;
-  }
+  .grain::after { display: none; }
 }
 
 /* ─── Mobile performance ────────────────────────────────── */
 @media (max-width: 767px) {
-  /* Disable expensive grain animation on mobile */
-  .grain::after {
-    display: none;
-  }
+  /* Kill grain on mobile entirely */
+  .grain::after { display: none; }
 
-  /* Cap blur radius — compositor cost scales with blur radius */
+  /* Disable scroll-based smooth scrolling — causes jank on iOS */
+  html { scroll-behavior: auto; }
+
+  /* Strip ALL backdrop-filter on mobile — compositor cost is too high */
   * {
-    --tw-backdrop-blur: blur(8px) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
   }
 }
 
-/* ─── Utility ───────────────────────────────────────────── */
+/* ─── Utilities ─────────────────────────────────────────── */
 .sr-only {
   position: absolute;
   width: 1px;

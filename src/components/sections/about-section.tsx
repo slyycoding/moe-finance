@@ -48,7 +48,7 @@ export function AboutSection() {
               transition={{ delay: i * 0.08, duration: 0.55 }}
               className="flex gap-4 sm:gap-6 mb-6 last:mb-0 group">
               <div className="flex flex-col items-center flex-shrink-0" aria-hidden>
-                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl border border-orange-500/30 bg-orange-500/10 flex items-center justify-center text-orange-400 text-xs font-bold group-hover:border-orange-500/60 group-hover:bg-orange-500/20 transition-all duration-300">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl border border-orange-500/30 bg-orange-500/10 flex items-center justify-center text-orange-400 text-xs font-bold">
                   {i + 1}
                 </div>
                 {i < timeline.length - 1 && (
@@ -74,7 +74,7 @@ export function AboutSection() {
                 viewport={vp}
                 transition={{ delay: i * 0.1, duration: 0.55 }}
                 whileHover={r ? {} : { y: -4 }}
-                className="flex items-start gap-4 p-6 sm:p-7 rounded-2xl border border-white/10 bg-white/[0.03] hover:border-orange-500/25 hover:bg-orange-500/5 transition-all duration-300"
+                className="flex items-start gap-4 p-6 sm:p-7 rounded-2xl border border-white/10 bg-white/[0.03] transition-colors duration-200"
                 style={{ boxShadow: "0 4px 30px rgba(0,0,0,0.2)" }}>
                 <div aria-hidden className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center flex-shrink-0">
                   <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-orange-400" strokeWidth={1.5} />

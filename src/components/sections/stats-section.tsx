@@ -7,21 +7,18 @@ import { Users, CalendarDays, Building2, LayoutList } from "lucide-react";
 function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: false, margin: "-40px 0px" });
+  // once: true — counter animates once, no re-trigger on scroll-back
+  const inView = useInView(ref, { once: true, margin: "-40px 0px" });
   const r = useReducedMotion();
 
   useEffect(() => {
-    if (!inView) {
-      // Reset so it re-animates on re-entry
-      setCount(0);
-      return;
-    }
+    if (!inView) return;
     if (r) { setCount(to); return; }
     let start = 0;
     let raf: number;
     const step = (ts: number) => {
       if (!start) start = ts;
-      const p = Math.min((ts - start) / 1600, 1);
+      const p = Math.min((ts - start) / 1400, 1);
       setCount(Math.floor((1 - Math.pow(1 - p, 3)) * to));
       if (p < 1) raf = requestAnimationFrame(step);
     };
@@ -43,22 +40,22 @@ export function StatsSection() {
   return (
     <section aria-label="Key statistics" className="relative bg-[#080d18] py-12 sm:py-16 md:py-20">
       <div aria-hidden className="glow-line w-full absolute top-0" />
-      <div aria-hidden className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="w-[60%] h-48 rounded-full"
+      {/* Glow hidden on mobile */}
+      <div aria-hidden className="absolute inset-0 flex items-center justify-center pointer-events-none hidden sm:flex">
+        <div className="w-[50%] h-40 rounded-full"
           style={{ background: "radial-gradient(ellipse, rgba(224,93,56,0.05) 0%, transparent 70%)", filter: "blur(20px)" }} />
       </div>
       <div className="container mx-auto px-4">
         <dl className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/5 border border-white/5 rounded-2xl overflow-hidden">
           {stats.map(({ Icon, value, suffix, label, sub }, i) => (
             <motion.div key={label}
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ delay: i * 0.06, duration: 0.45 }}
-              className="flex flex-col items-center text-center px-4 sm:px-8 py-8 sm:py-12 bg-[#080d18] hover:bg-[#0d1423] transition-colors duration-500 group relative overflow-hidden">
-              <div aria-hidden className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                style={{ background: "radial-gradient(circle at center, rgba(224,93,56,0.07) 0%, transparent 70%)" }} />
-              <div aria-hidden className="mb-4 w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center group-hover:bg-orange-500/20 group-hover:border-orange-500/40 transition-all duration-300">
+              transition={{ delay: i * 0.05, duration: 0.4 }}
+              className="flex flex-col items-center text-center px-4 sm:px-8 py-8 sm:py-12 bg-[#080d18] relative overflow-hidden">
+              {/* Icon — no transition-all, just static styles */}
+              <div aria-hidden className="mb-4 w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center">
                 <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400" strokeWidth={1.5} />
               </div>
               <dt className="sr-only">{label}</dt>
