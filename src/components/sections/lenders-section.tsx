@@ -27,7 +27,7 @@ const lenders: LenderDef[] = [
   { name: "NAB",               slug: "nab"           },               // red gradient + white text → fine on dark
   { name: "Macquarie",         slug: "macquarie"     },               // white wordmark → perfect on dark
   { name: "Pepper Money",      slug: "pepper-money"  },               // green + red on transparent → fine on dark
-  { name: "Rapid Finance",     slug: "rapid-finance" },               // blue + red → fine on dark
+  { name: "Rapid Finance",     slug: "rapid-finance", lightBg: true }, // dark blue text → needs light bg
   { name: "Plenti",            slug: "plenti",       lightBg: true }, // navy #002a61 → needs light bg
   { name: "Liberty Financial", slug: "liberty",      lightBg: true }, // navy blue wordmark → needs light bg
   { name: "Latitude",          slug: "latitude",     lightBg: true }, // violet wordmark → needs light bg
