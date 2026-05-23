@@ -4,22 +4,19 @@ import { useState, useEffect } from "react";
 import { useMotionValue, animate, motion } from "framer-motion";
 import useMeasure from "react-use-measure";
 
-function LenderItem({ name, slug, lightBg = false }: { name: string; slug: string; lightBg?: boolean }) {
+function LenderItem({ name, slug }: { name: string; slug: string; lightBg?: boolean }) {
   const [failed, setFailed] = useState(false);
 
   return (
     <div
       className="flex-shrink-0 select-none flex items-center justify-center"
       style={{
-        background: lightBg ? "rgba(255,255,255,0.97)" : "rgba(255,255,255,0.05)",
-        border: lightBg ? "1px solid rgba(0,0,0,0.07)" : "1px solid rgba(255,255,255,0.08)",
+        background: "rgba(255,255,255,0.97)",
+        border: "1px solid rgba(0,0,0,0.07)",
         borderRadius: "10px",
-        padding: "0 22px",
+        width: "148px",
         height: "54px",
-        minWidth: "120px",
-        boxShadow: lightBg
-          ? "0 1px 6px rgba(0,0,0,0.10), 0 0 0 1px rgba(0,0,0,0.03)"
-          : "0 1px 6px rgba(0,0,0,0.22)",
+        boxShadow: "0 1px 6px rgba(0,0,0,0.10), 0 0 0 1px rgba(0,0,0,0.03)",
       }}
     >
       {!failed ? (
@@ -29,16 +26,19 @@ function LenderItem({ name, slug, lightBg = false }: { name: string; slug: strin
           onError={() => setFailed(true)}
           loading="lazy"
           decoding="async"
-          style={{ height: "26px", width: "auto", maxWidth: "104px", objectFit: "contain", display: "block" }}
+          style={{ height: "26px", width: "auto", maxWidth: "108px", objectFit: "contain", display: "block" }}
         />
       ) : (
         <span
           style={{
-            fontSize: "12px",
+            fontSize: "11px",
             fontWeight: 600,
-            color: lightBg ? "rgba(0,0,0,0.5)" : "rgba(255,255,255,0.45)",
+            fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif",
+            color: "rgba(0,0,0,0.45)",
             whiteSpace: "nowrap",
             letterSpacing: "0.04em",
+            textAlign: "center",
+            padding: "0 8px",
           }}
         >
           {name}

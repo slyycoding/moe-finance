@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Share2, AtSign, PlayCircle, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 function LinkedinIcon({ className }: { className?: string }) {
   return (
@@ -11,10 +11,17 @@ function LinkedinIcon({ className }: { className?: string }) {
   );
 }
 
-const links = [
-  { label: "Services", items: [{ title: "Automotive Finance", href: "#services" }, { title: "Business Loans", href: "#services" }, { title: "Personal Loans", href: "#services" }, { title: "Equipment Finance", href: "#services" }]},
-  { label: "Company",  items: [{ title: "About Moe", href: "#about" }, { title: "Testimonials", href: "#testimonials" }, { title: "Contact", href: "#contact" }]},
-  { label: "Social",   items: [{ title: "Facebook", href: "#", icon: Share2 }, { title: "Instagram", href: "#", icon: AtSign }, { title: "YouTube", href: "#", icon: PlayCircle }, { title: "LinkedIn", href: "https://www.linkedin.com/in/moe-elsayyed/", icon: LinkedinIcon }]},
+const serviceLinks = [
+  { title: "Automotive Finance", href: "#services" },
+  { title: "Business Loans",     href: "#services" },
+  { title: "Personal Loans",     href: "#services" },
+  { title: "Equipment Finance",  href: "#services" },
+];
+
+const companyLinks = [
+  { title: "About Moe",    href: "#about" },
+  { title: "Testimonials", href: "#testimonials" },
+  { title: "Contact",      href: "#contact" },
 ];
 
 const vp = { once: true, amount: 0.2 } as const;
@@ -24,6 +31,8 @@ export function FooterSection() {
     <footer className="bg-[#060b16] border-t border-white/[0.05] px-4 py-12 sm:py-14">
       <div className="container mx-auto">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-12">
+
+          {/* Brand */}
           <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={vp}
             transition={{ duration: 0.45 }} className="col-span-2 sm:col-span-1 space-y-4">
             <div className="flex items-center gap-3">
@@ -40,30 +49,61 @@ export function FooterSection() {
             <p className="text-white/18 text-[10px]">© {new Date().getFullYear()} Moe Financial. All rights reserved.</p>
           </motion.div>
 
-          {links.map((section, i) => (
-            <motion.div key={section.label}
-              initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={vp}
-              transition={{ delay: 0.06 * (i + 1), duration: 0.45 }}>
-              <p className="text-white/28 text-[10px] uppercase tracking-[0.25em] mb-4">{section.label}</p>
-              <nav aria-label={`${section.label} links`}>
-                <ul className="space-y-2.5 list-none" role="list">
-                  {section.items.map(item => {
-                    const Icon = "icon" in item ? item.icon : null;
-                    return (
-                      <li key={item.title}>
-                        <a href={item.href}
-                          className="text-white/50 hover:text-orange-400 text-xs sm:text-sm transition-colors duration-200 flex items-center gap-1.5"
-                          aria-label={Icon ? `${item.title} — social media` : item.title}>
-                          {Icon && <Icon className="w-3.5 h-3.5 flex-shrink-0" aria-hidden />}
-                          {item.title}
-                        </a>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </nav>
-            </motion.div>
-          ))}
+          {/* Services */}
+          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={vp}
+            transition={{ delay: 0.06, duration: 0.45 }}>
+            <p className="text-white/28 text-[10px] uppercase tracking-[0.25em] mb-4">Services</p>
+            <nav aria-label="Services links">
+              <ul className="space-y-2.5 list-none" role="list">
+                {serviceLinks.map(item => (
+                  <li key={item.title}>
+                    <a href={item.href} className="text-white/50 hover:text-orange-400 text-xs sm:text-sm transition-colors duration-200">
+                      {item.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </motion.div>
+
+          {/* Company */}
+          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={vp}
+            transition={{ delay: 0.12, duration: 0.45 }}>
+            <p className="text-white/28 text-[10px] uppercase tracking-[0.25em] mb-4">Company</p>
+            <nav aria-label="Company links">
+              <ul className="space-y-2.5 list-none" role="list">
+                {companyLinks.map(item => (
+                  <li key={item.title}>
+                    <a href={item.href} className="text-white/50 hover:text-orange-400 text-xs sm:text-sm transition-colors duration-200">
+                      {item.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </motion.div>
+
+          {/* Connect */}
+          <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={vp}
+            transition={{ delay: 0.18, duration: 0.45 }}>
+            <p className="text-white/28 text-[10px] uppercase tracking-[0.25em] mb-4">Connect</p>
+            <a
+              href="https://www.linkedin.com/in/moe-elsayyed/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Connect with Moe on LinkedIn"
+              className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl text-white text-xs font-semibold transition-all duration-200 hover:brightness-110 active:scale-95"
+              style={{
+                background: "#0a66c2",
+                boxShadow: "0 0 16px rgba(10,102,194,0.35)",
+              }}
+            >
+              <LinkedinIcon className="w-4 h-4 flex-shrink-0" />
+              LinkedIn
+            </a>
+            <p className="mt-3 text-white/28 text-[11px] leading-snug">Connect for finance tips,<br />updates &amp; industry insights.</p>
+          </motion.div>
+
         </div>
 
         <div className="border-t border-white/[0.05] pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
