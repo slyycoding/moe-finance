@@ -7,9 +7,9 @@ import { useId, useState } from "react";
 const loanTypes = ["Car Finance","Business Loan","Equipment Finance","Personal Loan","Home Loan Referral","Credit Impaired Lending","Not Sure Yet"];
 
 const contactDetails = [
-  { icon: Phone,  label: "Call or Text",   value: "+61 481 293 395",              sub: "Same-day response" },
-  { icon: Mail,   label: "Email",          value: "contact@moefinancial.com.au",          sub: null },
-  { icon: MapPin, label: "Location",       value: "Melbourne, Victoria",           sub: "Australia-wide" },
+  { icon: Phone,  label: "Call or Text",   value: "+61 481 293 395",              sub: "Same-day response", href: "tel:+61481293395" },
+  { icon: Mail,   label: "Email",          value: "contact@moefinancial.com.au",  sub: null,               href: "mailto:contact@moefinancial.com.au" },
+  { icon: MapPin, label: "Location",       value: "Melbourne, Victoria",           sub: "Australia-wide",   href: null },
 ];
 
 const inputBase: React.CSSProperties = { background: "rgba(255,255,255,0.065)", border: "1px solid rgba(255,255,255,0.10)", fontSize: "16px" };
@@ -24,7 +24,7 @@ function Input({ id, type = "text", name, autoComplete, placeholder }: { id: str
   );
 }
 
-const vp = { once: true, amount: 0.1 } as const;
+const vp = { once: false, amount: 0.1 } as const;
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -102,7 +102,7 @@ export function ContactSection() {
             </div>
 
             <dl className="space-y-2.5">
-              {contactDetails.map(({ icon: Icon, label, value, sub }) => (
+              {contactDetails.map(({ icon: Icon, label, value, sub, href }) => (
                 <div key={label} className="flex items-start gap-2.5">
                   <div aria-hidden className="w-7 h-7 rounded-lg bg-orange-500/8 border border-orange-500/12 flex items-center justify-center flex-shrink-0 mt-0.5">
                     <Icon className="w-3.5 h-3.5 text-orange-400/70" strokeWidth={1.5} />
@@ -110,7 +110,10 @@ export function ContactSection() {
                   <div>
                     <dt className="text-white/25 text-[9px] uppercase tracking-[0.2em] leading-none mb-0.5">{label}</dt>
                     <dd className="text-white/70 text-xs font-medium leading-snug">
-                      {value}{sub && <span className="text-white/30 text-[10px] ml-1.5">· {sub}</span>}
+                      {href ? (
+                        <a href={href} className="hover:text-orange-400 transition-colors duration-200">{value}</a>
+                      ) : value}
+                      {sub && <span className="text-white/30 text-[10px] ml-1.5">· {sub}</span>}
                     </dd>
                   </div>
                 </div>

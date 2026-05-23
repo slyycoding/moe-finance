@@ -13,7 +13,7 @@ const steps = [
 
 export function JourneySection() {
   const ref = useRef<HTMLElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-60px 0px" });
+  const inView = useInView(ref, { once: false, margin: "-60px 0px" });
   const r = useReducedMotion();
 
   return (

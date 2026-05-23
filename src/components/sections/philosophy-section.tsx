@@ -9,7 +9,7 @@ const cards = [
   { icon: BarChart3, title: "Need another chance?",          desc: "Credit challenges aren't dead ends. Moe specialises in outside-policy deals others walk away from.", accent: "#a855f7" },
 ];
 
-const vp = { once: true, amount: 0.2 } as const;
+const vp = { once: false, amount: 0.2 } as const;
 
 export function PhilosophySection() {
   const r = useReducedMotion();

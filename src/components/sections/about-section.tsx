@@ -17,7 +17,7 @@ const differentiators = [
   { icon: TrendingUp, title: "Outside-Policy Expert",   desc: "Specialises in structuring deals other brokers walk away from — bad credit, self-employed, complex income." },
 ];
 
-const vp = { once: true, amount: 0.15 } as const;
+const vp = { once: false, amount: 0.15 } as const;
 
 export function AboutSection() {
   const r = useReducedMotion();

@@ -1,8 +1,36 @@
-"use client";
+﻿"use client";
 
 import { motion, useScroll, useTransform, useMotionTemplate } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
+
+function MoeLogo({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 540 90" fill="none" aria-label="Moe Financial" className={className}>
+      <text x="0" y="74"
+        fontFamily="Georgia, 'Playfair Display', 'Times New Roman', serif"
+        fontSize={84}
+        fontWeight={300}
+        fill="none"
+        stroke="#e05d38"
+        strokeWidth={1.0}
+        letterSpacing={-3}
+      >
+        Moe
+      </text>
+      <line x1={252} y1={14} x2={252} y2={76} stroke="rgba(224,93,56,0.4)" strokeWidth={0.85} />
+      <text x={268} y={57}
+        fontFamily="var(--font-body, 'Inter', 'Helvetica Neue', sans-serif)"
+        fontSize={15}
+        fontWeight={300}
+        fill="rgba(224,93,56,0.7)"
+        letterSpacing={6.5}
+      >
+        FINANCIAL
+      </text>
+    </svg>
+  );
+}
 
 function LinkedinIcon({ className }: { className?: string }) {
   return (
@@ -56,13 +84,8 @@ export function Navbar() {
 
         <div className="relative container mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
           {/* Logo */}
-          <a href="/" aria-label="Moe Financial — home" className="flex-shrink-0">
-            <div
-              className="flex items-center justify-center rounded-xl px-3"
-              style={{ background: "linear-gradient(135deg, #e05d38, #c94822)", height: "40px", boxShadow: "0 0 16px rgba(224,93,56,0.35)" }}
-            >
-              <img src="/moe-logo.png" alt="Moe Financial" style={{ height: "26px", width: "auto", display: "block", filter: "brightness(0) invert(1)" }} />
-            </div>
+          <a href="/" aria-label="Moe Financial — home" className="flex items-center flex-shrink-0">
+            <MoeLogo className="h-10 sm:h-11 w-auto" />
           </a>
 
           {/* Desktop links */}

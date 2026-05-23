@@ -7,12 +7,11 @@ import { Users, CalendarDays, Building2, LayoutList } from "lucide-react";
 function Counter({ to, suffix = "" }: { to: number; suffix?: string }) {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
-  // once: true — counter animates once, no re-trigger on scroll-back
-  const inView = useInView(ref, { once: true, margin: "-40px 0px" });
+  const inView = useInView(ref, { once: false, margin: "-40px 0px" });
   const r = useReducedMotion();
 
   useEffect(() => {
-    if (!inView) return;
+    if (!inView) { setCount(0); return; }
     if (r) { setCount(to); return; }
     let start = 0;
     let raf: number;
@@ -51,7 +50,7 @@ export function StatsSection() {
             <motion.div key={label}
               initial={{ opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: false, amount: 0.3 }}
               transition={{ delay: i * 0.05, duration: 0.4 }}
               className="flex flex-col items-center text-center px-4 sm:px-8 py-8 sm:py-12 bg-[#080d18] relative overflow-hidden">
               {/* Icon — no transition-all, just static styles */}
