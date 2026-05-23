@@ -13,22 +13,26 @@ interface LogoCloudProps {
   speed?: number;
 }
 
+// margin-right instead of gap so -50% is pixel-perfect (no seam jump)
+const CARD_W   = 160;
+const CARD_MR  = 12;
+const CARD_STEP = CARD_W + CARD_MR; // 172px per card slot
+
 function LenderCard({ name, slug, brandBg }: LenderDef) {
   return (
     <div
       style={{
-        flexShrink: 0,
-        width: "160px",
-        height: "60px",
-        borderRadius: "14px",
-        background: brandBg,
-        display: "flex",
-        alignItems: "center",
+        flexShrink:     0,
+        width:          `${CARD_W}px`,
+        height:         "52px",
+        marginRight:    `${CARD_MR}px`,
+        borderRadius:   "8px",
+        background:     brandBg,
+        display:        "flex",
+        alignItems:     "center",
         justifyContent: "center",
-        padding: "0 16px",
-        overflow: "hidden",
-        boxShadow: "0 2px 12px rgba(0,0,0,0.35)",
-        border: "1px solid rgba(255,255,255,0.06)",
+        padding:        "0 18px",
+        overflow:       "hidden",
       }}
     >
       <img
@@ -37,16 +41,14 @@ function LenderCard({ name, slug, brandBg }: LenderDef) {
         loading="lazy"
         decoding="async"
         style={{
-          height: "28px",
-          width: "auto",
-          maxWidth: "128px",
-          objectFit: "contain",
-          display: "block",
-          filter: "brightness(0) invert(1)",
-          opacity: 0.92,
+          height:     "26px",
+          width:      "auto",
+          maxWidth:   "124px",
+          objectFit:  "contain",
+          display:    "block",
         }}
         onError={(e) => {
-          const img = e.currentTarget;
+          const img    = e.currentTarget;
           const parent = img.parentElement;
           if (parent && !parent.querySelector(".lc-fb")) {
             img.style.display = "none";
@@ -54,8 +56,9 @@ function LenderCard({ name, slug, brandBg }: LenderDef) {
             span.className = "lc-fb";
             span.textContent = name;
             span.style.cssText =
-              "font-size:12px;font-weight:700;color:rgba(255,255,255,0.9);" +
-              "white-space:nowrap;letter-spacing:0.02em;font-family:inherit;";
+              "font-size:11px;font-weight:700;color:#fff;" +
+              "white-space:nowrap;letter-spacing:0.05em;" +
+              "text-transform:uppercase;font-family:inherit;";
             parent.appendChild(span);
           }
         }}
@@ -64,46 +67,67 @@ function LenderCard({ name, slug, brandBg }: LenderDef) {
   );
 }
 
-export function LogoCloud({ lenders, speed = 38 }: LogoCloudProps) {
+export function LogoCloud({ lenders, speed = 36 }: LogoCloudProps) {
+  // Animate exactly one full set width so the loop seam is invisible
+  const target = -(lenders.length * CARD_STEP);
+
   return (
     <>
       <style>{`
-        @keyframes mf-lender-scroll {
+        @keyframes mf-ticker {
           from { transform: translateX(0); }
-          to   { transform: translateX(-50%); }
+          to   { transform: translateX(${target}px); }
         }
-        .mf-lenders-track {
-          animation: mf-lender-scroll ${speed}s linear infinite;
+        .mf-ticker-track {
+          animation: mf-ticker ${speed}s linear infinite;
           will-change: transform;
         }
         @media (prefers-reduced-motion: reduce) {
-          .mf-lenders-track { animation: none; }
+          .mf-ticker-track { animation: none; }
         }
       `}</style>
 
+      {/* Outer dark container */}
       <div
-        className="relative overflow-hidden"
-        style={{ padding: "6px 0" }}
+        style={{
+          height:       "95px",
+          border:       "1px solid rgba(255,255,255,0.08)",
+          borderRadius: "14px",
+          background:   "rgba(0,0,0,0.35)",
+          overflow:     "hidden",
+          display:      "flex",
+          alignItems:   "center",
+          position:     "relative",
+        }}
       >
-        {/* Edge fade masks */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute left-0 top-0 h-full w-24 sm:w-40 z-10"
-          style={{ background: "linear-gradient(to right, #080d18 20%, transparent 100%)" }}
-        />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute right-0 top-0 h-full w-24 sm:w-40 z-10"
-          style={{ background: "linear-gradient(to left, #080d18 20%, transparent 100%)" }}
-        />
+        {/* Left fade mask */}
+        <div aria-hidden style={{
+          position:      "absolute",
+          left:          0, top: 0, bottom: 0,
+          width:         "96px",
+          background:    "linear-gradient(to right, rgba(0,0,0,0.6) 0%, transparent 100%)",
+          zIndex:        10,
+          pointerEvents: "none",
+        }} />
 
+        {/* Right fade mask */}
+        <div aria-hidden style={{
+          position:      "absolute",
+          right:         0, top: 0, bottom: 0,
+          width:         "96px",
+          background:    "linear-gradient(to left, rgba(0,0,0,0.6) 0%, transparent 100%)",
+          zIndex:        10,
+          pointerEvents: "none",
+        }} />
+
+        {/* Scrolling track — margin-right on each card for pixel-perfect -50% */}
         <div
-          className="mf-lenders-track"
+          className="mf-ticker-track"
           style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "12px",
-            width: "max-content",
+            display:     "flex",
+            alignItems:  "center",
+            width:       "max-content",
+            paddingLeft: "12px",
           }}
           aria-label="Lending partners"
         >

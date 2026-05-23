@@ -13,7 +13,7 @@ const lenders: LenderDef[] = [
   { name: "ANZ",               slug: "anz",            brandBg: "#007DBA",  textColor: "#fff" },
   { name: "NAB",               slug: "nab",            brandBg: "#E4002B",  textColor: "#fff" },
   { name: "Macquarie",         slug: "macquarie",      brandBg: "#00174A",  textColor: "#fff" },
-  { name: "Pepper Money",      slug: "pepper-money",   brandBg: "#ffffff",  textColor: "#111" },
+  { name: "Pepper Money",      slug: "pepper-money",   brandBg: "#CC3A22",  textColor: "#fff" },
   { name: "Rapid Finance",     slug: "rapid-finance",  brandBg: "#003087",  textColor: "#fff" },
   { name: "Plenti",            slug: "plenti",         brandBg: "#002A61",  textColor: "#fff" },
   { name: "Liberty Financial", slug: "liberty",        brandBg: "#002F5F",  textColor: "#fff" },
@@ -66,7 +66,7 @@ export function LendersSection() {
           <LogoCloud lenders={lenders} />
         </motion.div>
 
-        <p className="text-center text-white/20 text-xs mt-6">
+        <p className="text-center text-white/35 text-xs mt-5">
           *Panel examples only. Availability and lender options may change over time.
         </p>
       </div>
