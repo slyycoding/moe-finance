@@ -158,6 +158,16 @@
   to   { transform: translateX(200%) skewX(-15deg); }
 }
 
+/* ─── CTA button pulse glow ─────────────────────────────── */
+.btn-pulse {
+  animation: ctaPulse 3.2s ease-in-out infinite;
+}
+
+@keyframes ctaPulse {
+  0%, 100% { box-shadow: 0 0 18px rgba(224,93,56,0.22), 0 2px 8px rgba(0,0,0,0.2); }
+  50%       { box-shadow: 0 0 32px rgba(224,93,56,0.42), 0 2px 8px rgba(0,0,0,0.2); }
+}
+
 /* ─── Glow divider ──────────────────────────────────────── */
 .glow-line {
   height: 1px;

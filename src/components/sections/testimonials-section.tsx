@@ -68,7 +68,7 @@ export function TestimonialsSection() {
               <motion.article key={t.id} custom={dir} variants={slideVariants}
                 initial="enter" animate="center" exit="exit"
                 transition={{ duration: 0.42, ease: [0.32, 0.72, 0, 1] }}
-                aria-label={`Testimonial from ${t.name}, ${t.profession}`}
+                aria-label={`Testimonial from ${t.name}`}
                 className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 sm:px-12 md:px-16 py-10 sm:py-12 rounded-3xl border border-white/10 bg-[#0c1525]"
                 style={{ boxShadow: "0 20px 60px rgba(0,0,0,0.3)" }}>
                 <div aria-hidden className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-16 rounded-full pointer-events-none"
@@ -81,14 +81,7 @@ export function TestimonialsSection() {
                 <blockquote className="text-lg sm:text-xl md:text-2xl text-white/85 leading-snug font-light mb-7 italic relative z-10">
                   <p>&ldquo;{t.quote}&rdquo;</p>
                 </blockquote>
-                <div className="flex items-center gap-3">
-                  <img src={t.avatar} alt={`Portrait of ${t.name}`} width={48} height={48} loading="lazy"
-                    className="w-12 h-12 rounded-full border-2 border-orange-500/30 object-cover flex-shrink-0" />
-                  <div className="text-left">
-                    <p className="text-white font-semibold text-sm sm:text-base" style={{ fontFamily: "var(--font-heading)" }}>{t.name}</p>
-                    <p className="text-orange-400/60 text-xs sm:text-sm">{t.profession}</p>
-                  </div>
-                </div>
+                <p className="text-white/80 font-semibold text-sm sm:text-base" style={{ fontFamily: "var(--font-heading)" }}>{t.name}</p>
               </motion.article>
             </AnimatePresence>
           </div>

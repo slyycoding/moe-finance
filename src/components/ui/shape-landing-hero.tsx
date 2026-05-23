@@ -29,12 +29,12 @@ function FloatingShape({ className, delay = 0, width = 300, height = 80, rotate 
 }
 
 const lineFade: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({ opacity: 1, y: 0, transition: { duration: 0.65, delay: 0.1 + i * 0.1, ease: [0.16, 1, 0.3, 1] } }),
+  hidden: { opacity: 0, y: 28 },
+  visible: (i: number) => ({ opacity: 1, y: 0, transition: { type: "spring", stiffness: 160, damping: 22, delay: 0.08 + i * 0.1 } }),
 };
 const upFade: Variants = {
-  hidden: { opacity: 0, y: 10 },
-  visible: (i: number) => ({ opacity: 1, y: 0, transition: { duration: 0.55, delay: 0.4 + i * 0.08, ease: "easeOut" } }),
+  hidden: { opacity: 0, y: 14 },
+  visible: (i: number) => ({ opacity: 1, y: 0, transition: { type: "spring", stiffness: 200, damping: 26, delay: 0.32 + i * 0.07 } }),
 };
 
 export function HeroGeometric({ title1 = "Finance Made", title2 = "Personal" }: {

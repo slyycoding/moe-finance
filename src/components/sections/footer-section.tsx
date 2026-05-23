@@ -34,19 +34,7 @@ export function FooterSection() {
 
           {/* Brand */}
           <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={vp}
-            transition={{ duration: 0.45 }} className="col-span-2 sm:col-span-1 space-y-4">
-            <a href="/" aria-label="Moe Financial — home">
-              <svg viewBox="0 0 540 90" fill="none" aria-label="Moe Financial" className="h-9 w-auto">
-                <text x="0" y="74"
-                  fontFamily="Georgia, 'Playfair Display', 'Times New Roman', serif"
-                  fontSize={84} fontWeight={300} fill="none"
-                  stroke="rgba(255,255,255,0.9)" strokeWidth={1.0} letterSpacing={-3}>Moe</text>
-                <line x1={252} y1={14} x2={252} y2={76} stroke="rgba(255,255,255,0.28)" strokeWidth={0.85} />
-                <text x={268} y={57}
-                  fontFamily="var(--font-body, 'Inter', 'Helvetica Neue', sans-serif)"
-                  fontSize={15} fontWeight={300} fill="rgba(255,255,255,0.55)" letterSpacing={6.5}>FINANCIAL</text>
-              </svg>
-            </a>
+            transition={{ duration: 0.45 }} className="col-span-2 sm:col-span-1 space-y-3">
             <p className="text-white/38 text-xs leading-relaxed">Melbourne&apos;s trusted finance broker — car finance, business loans, equipment finance and more across Australia since 2021.</p>
             <p className="text-white/18 text-[10px]">© {new Date().getFullYear()} Moe Financial. All rights reserved.</p>
           </motion.div>
