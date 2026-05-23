@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
       "500+ Australians helped. 65+ lender partners. Car finance, business loans, equipment finance and credit-impaired lending — Melbourne's most trusted finance broker.",
     images: [
       {
-        url: `${SITE_URL}/og-image.jpg`,
+        url: `${SITE_URL}/og-image.png`,
         width: 1200,
         height: 630,
         alt: "Moe Financial — Melbourne Finance Broker",
@@ -70,11 +70,9 @@ export const metadata: Metadata = {
     title: "Moe | Finance Broker Melbourne — Moe Financial",
     description:
       "500+ clients helped. 65+ lenders. Car finance, business loans, equipment finance and more across Australia.",
-    images: [`${SITE_URL}/og-image.jpg`],
+    images: [`${SITE_URL}/og-image.png`],
   },
-  verification: {
-    google: "YOUR_GOOGLE_VERIFICATION_TOKEN",
-  },
+  
 };
 
 const jsonLd = {

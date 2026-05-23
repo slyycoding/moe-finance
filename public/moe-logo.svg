@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 90" fill="none" aria-label="Moe Financial">
+  <!-- Moe in thin outlined display serif -->
+  <text x="0" y="74" font-family="'Cormorant Garamond', 'Playfair Display', Georgia, serif" font-size="84" font-weight="300" fill="none" stroke="white" stroke-width="1.1" paint-order="stroke" letter-spacing="-3">Moe</text>
+  <!-- Thin vertical separator -->
+  <line x1="252" y1="14" x2="252" y2="76" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+  <!-- FINANCIAL wordmark -->
+  <text x="268" y="57" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="300" fill="rgba(255,255,255,0.7)" letter-spacing="6.5">FINANCIAL</text>
+</svg>

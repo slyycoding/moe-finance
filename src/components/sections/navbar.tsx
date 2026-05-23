@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion, useScroll, useTransform, useMotionTemplate } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
@@ -56,18 +56,14 @@ export function Navbar() {
 
         <div className="relative container mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
           {/* Logo */}
-          <a href="/" aria-label="Moe Financial — home" className="flex items-center gap-2.5 group flex-shrink-0">
-            <div
-              className="w-9 h-9 rounded-xl flex items-center justify-center"
-              style={{ background: "linear-gradient(135deg, #e05d38, #c94822)", boxShadow: "0 0 14px rgba(224,93,56,0.3)" }}
-              aria-hidden="true"
-            >
-              <span className="text-white font-black text-base" style={{ fontFamily: "var(--font-heading)" }}>M</span>
-            </div>
-            <div className="hidden xs:block sm:block">
-              <p className="text-white font-bold text-sm leading-tight" style={{ fontFamily: "var(--font-heading)" }}>Moe</p>
-              <p className="text-orange-400/60 text-[10px] tracking-[0.25em] uppercase leading-tight">Finance Broker</p>
-            </div>
+          <a href="/" aria-label="Moe Financial — home" className="flex items-center flex-shrink-0">
+            <img
+              src="/moe-logo.svg"
+              alt="Moe Financial"
+              width={200}
+              height={40}
+              className="h-8 sm:h-9 w-auto"
+            />
           </a>
 
           {/* Desktop links */}

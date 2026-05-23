@@ -1,39 +1,26 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import { LogoCloud, type LenderDef } from "@/components/ui/logo-cloud";
 
 /*
- * All logos served from /public/logos/{slug}.svg (local, no CDN dependency).
- *
- * Sourced from:
- *  Westpac, CommBank, ANZ  → Wikimedia Commons (official SVG, verified working)
- *  NAB                     → nab.com.au CDN (official, verified working)
- *  Macquarie               → macquarie.com CDN (official white SVG, verified working)
- *  Pepper Money            → peppermoney.com.au DAM (official, verified working)
- *  Rapid Finance           → gorapid.com.au (official, verified working)
- *  Plenti                  → Webflow CDN (official navy SVG, verified working)
- *  Liberty, Latitude,
- *  Now Finance, Selfco,
- *  ALC                     → Branded wordmark SVGs in brand colours (accurate representations)
- *
- * lightBg: true = logo rendered on a near-white pill (for dark-mark logos like Plenti navy,
- *                 Latitude violet, Liberty navy, Selfco navy, ALC navy, Now Finance orange on dark)
+ * brandBg: the lender's primary brand background colour so each badge
+ * looks like the lender's own branded tile — matching the reference design.
  */
 const lenders: LenderDef[] = [
-  { name: "Westpac",           slug: "westpac",      lightBg: true },  // dark #2d373c text → needs light bg
-  { name: "Commonwealth Bank", slug: "commbank",     lightBg: true },  // black + yellow → needs light bg
-  { name: "ANZ",               slug: "anz"           },               // has built-in white rect → fine on dark
-  { name: "NAB",               slug: "nab"           },               // red gradient + white text → fine on dark
-  { name: "Macquarie",         slug: "macquarie"     },               // white wordmark → perfect on dark
-  { name: "Pepper Money",      slug: "pepper-money"  },               // green + red on transparent → fine on dark
-  { name: "Rapid Finance",     slug: "rapid-finance", lightBg: true }, // dark blue text → needs light bg
-  { name: "Plenti",            slug: "plenti",       lightBg: true }, // navy #002a61 → needs light bg
-  { name: "Liberty Financial", slug: "liberty",      lightBg: true }, // navy blue wordmark → needs light bg
-  { name: "Latitude",          slug: "latitude",     lightBg: true }, // violet wordmark → needs light bg
-  { name: "Now Finance",       slug: "now-finance"   },               // orange → visible on dark pill
-  { name: "Selfco Leasing",    slug: "selfco",       lightBg: true }, // navy wordmark → needs light bg
-  { name: "Aust. Lending Ctr", slug: "alc",          lightBg: true }, // navy wordmark → needs light bg
+  { name: "Westpac",           slug: "westpac",       brandBg: "#D5003A",  textColor: "#fff" },
+  { name: "Commonwealth Bank", slug: "commbank",       brandBg: "#000000",  textColor: "#FFCD00" },
+  { name: "ANZ",               slug: "anz",            brandBg: "#007DBA",  textColor: "#fff" },
+  { name: "NAB",               slug: "nab",            brandBg: "#E4002B",  textColor: "#fff" },
+  { name: "Macquarie",         slug: "macquarie",      brandBg: "#00174A",  textColor: "#fff" },
+  { name: "Pepper Money",      slug: "pepper-money",   brandBg: "#ffffff",  textColor: "#111" },
+  { name: "Rapid Finance",     slug: "rapid-finance",  brandBg: "#003087",  textColor: "#fff" },
+  { name: "Plenti",            slug: "plenti",         brandBg: "#002A61",  textColor: "#fff" },
+  { name: "Liberty Financial", slug: "liberty",        brandBg: "#002F5F",  textColor: "#fff" },
+  { name: "Latitude",          slug: "latitude",       brandBg: "#6B2D8B",  textColor: "#fff" },
+  { name: "Now Finance",       slug: "now-finance",    brandBg: "#FF5800",  textColor: "#fff" },
+  { name: "Selfco Leasing",    slug: "selfco",         brandBg: "#0F2B6E",  textColor: "#fff" },
+  { name: "Aust. Lending Ctr", slug: "alc",            brandBg: "#1B3A6B",  textColor: "#fff" },
 ];
 
 const vp = { once: true, amount: 0.3 } as const;
@@ -49,14 +36,21 @@ export function LendersSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-10 sm:mb-12"
         >
-          <p className="text-orange-400/70 text-xs font-semibold tracking-[0.3em] uppercase mb-4">
-            Our Network
-          </p>
+          <span
+            className="inline-block px-3 py-1.5 mb-5 text-[11px] font-semibold tracking-[0.3em] uppercase rounded-full"
+            style={{
+              background: "rgba(224,93,56,0.12)",
+              border: "1px solid rgba(224,93,56,0.3)",
+              color: "#e05d38",
+            }}
+          >
+            Our Panel
+          </span>
           <h2
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-3 leading-none"
+            className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-4 leading-none"
             style={{ fontFamily: "var(--font-heading)", letterSpacing: "-0.02em" }}
           >
-            65+ Lending Partners
+            We are proud to work with
           </h2>
           <p className="text-white/40 max-w-sm mx-auto text-sm sm:text-base font-light">
             Major banks to specialist non-conforming lenders — all loan types and credit profiles.
@@ -69,8 +63,12 @@ export function LendersSection() {
           viewport={vp}
           transition={{ duration: 0.55, delay: 0.15 }}
         >
-          <LogoCloud lenders={lenders} speed={50} />
+          <LogoCloud lenders={lenders} speed={48} />
         </motion.div>
+
+        <p className="text-center text-white/20 text-xs mt-6">
+          *Panel examples only. Availability and lender options may change over time.
+        </p>
       </div>
     </div>
   );
