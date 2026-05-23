@@ -63,7 +63,7 @@ export function LendersSection() {
           viewport={vp}
           transition={{ duration: 0.55, delay: 0.15 }}
         >
-          <LogoCloud lenders={lenders} speed={48} />
+          <LogoCloud lenders={lenders} />
         </motion.div>
 
         <p className="text-center text-white/20 text-xs mt-6">
