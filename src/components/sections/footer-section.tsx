@@ -37,9 +37,9 @@ export function FooterSection() {
             transition={{ duration: 0.45 }} className="col-span-2 sm:col-span-1 space-y-4">
             <div
               className="inline-flex items-center justify-center rounded-xl px-3"
-              style={{ background: "linear-gradient(135deg, #e05d38, #c94822)", height: "44px", boxShadow: "0 0 16px rgba(224,93,56,0.35)" }}
+              style={{ background: "linear-gradient(135deg, #e05d38, #c94822)", height: "40px", boxShadow: "0 0 14px rgba(224,93,56,0.3)" }}
             >
-              <img src="/moe-logo.png" alt="Moe Financial" style={{ height: "28px", width: "auto", display: "block", filter: "brightness(0) invert(1)" }} />
+              <img src="/moe-logo.png" alt="Moe Financial" style={{ height: "26px", width: "auto", display: "block", filter: "brightness(0) invert(1)" }} />
             </div>
             <p className="text-white/38 text-xs leading-relaxed">Melbourne&apos;s trusted finance broker — car finance, business loans, equipment finance and more across Australia since 2021.</p>
             <p className="text-white/18 text-[10px]">© {new Date().getFullYear()} Moe Financial. All rights reserved.</p>

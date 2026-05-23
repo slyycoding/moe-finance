@@ -84,8 +84,13 @@ export function Navbar() {
 
         <div className="relative container mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
           {/* Logo */}
-          <a href="/" aria-label="Moe Financial — home" className="flex items-center flex-shrink-0">
-            <MoeLogo className="h-10 sm:h-11 w-auto" />
+          <a href="/" aria-label="Moe Financial — home" className="flex-shrink-0">
+            <div
+              className="inline-flex items-center justify-center rounded-xl px-3"
+              style={{ background: "linear-gradient(135deg, #e05d38, #c94822)", height: "40px", boxShadow: "0 0 14px rgba(224,93,56,0.3)" }}
+            >
+              <img src="/moe-logo.png" alt="Moe Financial" style={{ height: "26px", width: "auto", display: "block", filter: "brightness(0) invert(1)" }} />
+            </div>
           </a>
 
           {/* Desktop links */}
