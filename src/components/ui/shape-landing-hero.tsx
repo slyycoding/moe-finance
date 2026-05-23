@@ -59,6 +59,21 @@ export function HeroGeometric({ title1 = "Finance Made", title2 = "Personal" }: 
         style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)", backgroundSize: "90px 90px" }} />
 
       <div className="relative z-10 w-full max-w-5xl mx-auto text-center flex flex-col items-center">
+        {/* Brand lockup — thin outline serif, matches navbar */}
+        <motion.div custom={-1} variants={lineFade} initial={r ? "visible" : "hidden"} animate="visible"
+          className="mb-6 sm:mb-8">
+          <svg viewBox="0 0 540 90" fill="none" aria-label="Moe Financial" className="h-10 sm:h-14 md:h-16 lg:h-[72px] w-auto mx-auto">
+            <text x="0" y="74"
+              fontFamily="Georgia, 'Playfair Display', 'Times New Roman', serif"
+              fontSize={84} fontWeight={300} fill="none"
+              stroke="rgba(255,255,255,0.92)" strokeWidth={1.0} letterSpacing={-3}>Moe</text>
+            <line x1={252} y1={14} x2={252} y2={76} stroke="rgba(255,255,255,0.28)" strokeWidth={0.85} />
+            <text x={268} y={57}
+              fontFamily="var(--font-body, 'Inter', 'Helvetica Neue', sans-serif)"
+              fontSize={15} fontWeight={300} fill="rgba(255,255,255,0.58)" letterSpacing={6.5}>FINANCIAL</text>
+          </svg>
+        </motion.div>
+
         {/* No willChange on one-shot animations — Framer Motion handles it internally */}
         <h1 className="font-extrabold leading-none tracking-tight uppercase mb-6 overflow-hidden"
           style={{ fontFamily: "var(--font-heading)", letterSpacing: "-0.03em" }}>
