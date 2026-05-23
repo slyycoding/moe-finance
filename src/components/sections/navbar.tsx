@@ -56,17 +56,12 @@ export function Navbar() {
 
         <div className="relative container mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
           {/* Logo */}
-          <a href="/" aria-label="Moe Financial — home" className="flex items-center gap-2.5 group flex-shrink-0">
+          <a href="/" aria-label="Moe Financial — home" className="flex-shrink-0">
             <div
-              className="w-9 h-9 rounded-xl flex items-center justify-center"
-              style={{ background: "linear-gradient(135deg, #e05d38, #c94822)", boxShadow: "0 0 14px rgba(224,93,56,0.3)" }}
-              aria-hidden="true"
+              className="flex items-center justify-center rounded-xl px-3"
+              style={{ background: "linear-gradient(135deg, #e05d38, #c94822)", height: "40px", boxShadow: "0 0 16px rgba(224,93,56,0.35)" }}
             >
-              <span className="text-white font-black text-base" style={{ fontFamily: "var(--font-heading)" }}>M</span>
-            </div>
-            <div className="hidden xs:block sm:block">
-              <p className="text-white font-bold text-sm leading-tight" style={{ fontFamily: "var(--font-heading)" }}>Moe</p>
-              <p className="text-orange-400/60 text-[10px] tracking-[0.25em] uppercase leading-tight">Finance Broker</p>
+              <img src="/moe-logo.png" alt="Moe Financial" style={{ height: "26px", width: "auto", display: "block", filter: "brightness(0) invert(1)" }} />
             </div>
           </a>
 

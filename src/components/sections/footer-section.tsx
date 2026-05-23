@@ -35,15 +35,11 @@ export function FooterSection() {
           {/* Brand */}
           <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={vp}
             transition={{ duration: 0.45 }} className="col-span-2 sm:col-span-1 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
-                style={{ background: "linear-gradient(135deg, #e05d38, #c94822)" }} aria-hidden>
-                <span className="text-white font-black text-sm" style={{ fontFamily: "var(--font-heading)" }}>M</span>
-              </div>
-              <div>
-                <p className="text-white font-bold text-sm leading-tight" style={{ fontFamily: "var(--font-heading)" }}>Moe</p>
-                <p className="text-orange-400/60 text-[10px] tracking-[0.25em] uppercase">Finance Broker</p>
-              </div>
+            <div
+              className="inline-flex items-center justify-center rounded-xl px-3"
+              style={{ background: "linear-gradient(135deg, #e05d38, #c94822)", height: "44px", boxShadow: "0 0 16px rgba(224,93,56,0.35)" }}
+            >
+              <img src="/moe-logo.png" alt="Moe Financial" style={{ height: "28px", width: "auto", display: "block", filter: "brightness(0) invert(1)" }} />
             </div>
             <p className="text-white/38 text-xs leading-relaxed">Melbourne&apos;s trusted finance broker — car finance, business loans, equipment finance and more across Australia since 2021.</p>
             <p className="text-white/18 text-[10px]">© {new Date().getFullYear()} Moe Financial. All rights reserved.</p>

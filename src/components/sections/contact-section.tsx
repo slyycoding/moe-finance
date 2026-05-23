@@ -8,7 +8,7 @@ const loanTypes = ["Car Finance","Business Loan","Equipment Finance","Personal L
 
 const contactDetails = [
   { icon: Phone,  label: "Call or Text",   value: "+61 481 293 395",              sub: "Same-day response" },
-  { icon: Mail,   label: "Email",          value: "moe.sayyed@gmail.com",          sub: null },
+  { icon: Mail,   label: "Email",          value: "contact@moefinancial.com.au",          sub: null },
   { icon: MapPin, label: "Location",       value: "Melbourne, Victoria",           sub: "Australia-wide" },
 ];
 
