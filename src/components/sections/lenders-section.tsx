@@ -23,7 +23,7 @@ const lenders: LenderDef[] = [
   { name: "Aust. Lending Ctr", slug: "alc",            brandBg: "#1B3A6B",  textColor: "#fff" },
 ];
 
-const vp = { once: true, amount: 0.3 } as const;
+const vp = { once: false, amount: 0.3 } as const;
 
 export function LendersSection() {
   return (

@@ -2,7 +2,6 @@
 
 import { useEffect } from "react";
 import { useMotionValue, animate, motion } from "framer-motion";
-import useMeasure from "react-use-measure";
 
 export type LenderDef = {
   name: string;
@@ -69,22 +68,25 @@ interface LogoCloudProps {
   speed?: number;
 }
 
+// Badge width + gap must match the rendered values for a seamless loop
+const BADGE_W = 160;
+const BADGE_GAP = 12; // gap-3 = 12px
+
 export function LogoCloud({ lenders, speed = 45 }: LogoCloudProps) {
-  const [ref, { width }] = useMeasure();
   const x = useMotionValue(0);
 
   useEffect(() => {
-    if (!width) return;
-    const half = width / 2;
-    const controls = animate(x, [0, -half], {
+    // Move exactly one full set-width (including the trailing gap) so the
+    // loop seam is pixel-perfect — no jump at the reset point.
+    const target = -(lenders.length * (BADGE_W + BADGE_GAP));
+    const controls = animate(x, [0, target], {
       ease: "linear",
       duration: speed,
       repeat: Infinity,
       repeatType: "loop",
-      onRepeat: () => x.set(0),
     });
     return controls.stop;
-  }, [width, speed, x]);
+  }, [lenders.length, speed, x]);
 
   return (
     <div className="relative overflow-hidden" style={{ padding: "8px 0" }}>
@@ -93,7 +95,6 @@ export function LogoCloud({ lenders, speed = 45 }: LogoCloudProps) {
       <div aria-hidden className="pointer-events-none absolute right-0 top-0 h-full w-28 sm:w-48 z-10"
         style={{ background: "linear-gradient(to left, #080d18 30%, transparent 100%)" }} />
       <motion.div
-        ref={ref}
         style={{ x, willChange: "transform" }}
         className="flex items-center gap-3 w-max py-2"
         aria-label="Lending partner logos"

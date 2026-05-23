@@ -58,7 +58,7 @@ export function Navbar() {
           {/* Logo */}
           <a href="/" aria-label="Moe Financial — home" className="flex items-center flex-shrink-0">
             <img
-              src="/moe-logo.svg"
+              src="/moe-logo.png"
               alt="Moe Financial"
               width={200}
               height={40}

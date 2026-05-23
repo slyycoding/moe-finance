@@ -36,7 +36,7 @@ const ac: Record<string, { icon: string; border: string; glow: string; bg: strin
   green:  { icon: "text-green-400",  border: "border-green-500/20",  glow: "rgba(34,197,94,0.09)",   bg: "bg-green-500/[0.08]" },
 };
 
-const vp = { once: true, amount: 0.15 } as const;
+const vp = { once: false, amount: 0.15 } as const;
 
 export function ServicesSection() {
   const r = useReducedMotion();

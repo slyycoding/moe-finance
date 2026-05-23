@@ -11,7 +11,7 @@ const testimonials = [
   { id: "t-4", name: "Nadia R.",  profession: "Small Business Owner", rating: 5, quote: "Moe helped me get a business loan when my credit wasn't perfect. He never gives up on finding a solution. He's become my go-to contact for everything finance.", avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop&q=80" },
 ];
 
-const vp = { once: true, amount: 0.2 } as const;
+const vp = { once: false, amount: 0.2 } as const;
 
 export function TestimonialsSection() {
   const [[index, dir], setPage] = useState([0, 1]);
