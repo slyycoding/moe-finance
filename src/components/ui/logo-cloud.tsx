@@ -11,50 +11,46 @@ export type LenderDef = {
   lightBg?: boolean;
 };
 
-function LenderBadge({ name, slug, brandBg, textColor = "#fff" }: LenderDef) {
+function LenderBadge({ name, slug }: LenderDef) {
   return (
     <div
-      className="flex-shrink-0 select-none flex items-center justify-center relative overflow-hidden"
+      className="flex-shrink-0 select-none flex items-center justify-center"
       style={{
-        background: brandBg,
-        borderRadius: "12px",
-        width: "160px",
-        height: "60px",
-        boxShadow: "0 2px 14px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1)",
-        border: "1px solid rgba(255,255,255,0.07)",
+        background: "rgba(255,255,255,0.05)",
+        borderRadius: "14px",
+        width: "180px",
+        height: "76px",
+        border: "1px solid rgba(255,255,255,0.09)",
+        backdropFilter: "blur(8px)",
+        WebkitBackdropFilter: "blur(8px)",
       }}
     >
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          background: "linear-gradient(160deg, rgba(255,255,255,0.08) 0%, transparent 55%)",
-          borderRadius: "12px",
-          pointerEvents: "none",
-        }}
-      />
       <img
         src={`/logos/${slug}.svg`}
         alt={`${name} logo`}
         loading="lazy"
         decoding="async"
         style={{
-          height: "28px",
+          height: "30px",
           width: "auto",
-          maxWidth: "124px",
+          maxWidth: "144px",
           objectFit: "contain",
           display: "block",
-          position: "relative",
-          zIndex: 1,
+          filter: "brightness(0) invert(1)",
+          opacity: 0.85,
         }}
         onError={(e) => {
           const img = e.currentTarget;
           const parent = img.parentElement;
-          if (parent) {
+          if (parent && !parent.querySelector(".lc-fallback")) {
             img.style.display = "none";
             const span = document.createElement("span");
+            span.className = "lc-fallback";
             span.textContent = name;
-            span.style.cssText = `font-size:12px;font-weight:700;font-family:Helvetica Neue,sans-serif;color:${textColor};white-space:nowrap;letter-spacing:0.03em;padding:0 10px;position:relative;z-index:1;`;
+            span.style.cssText =
+              "font-size:11px;font-weight:600;font-family:'Inter',Helvetica Neue,sans-serif;" +
+              "color:rgba(255,255,255,0.65);white-space:nowrap;letter-spacing:0.07em;" +
+              "text-transform:uppercase;text-align:center;padding:0 14px;";
             parent.appendChild(span);
           }
         }}
@@ -69,7 +65,7 @@ interface LogoCloudProps {
 }
 
 // Badge width + gap must match the rendered values for a seamless loop
-const BADGE_W = 160;
+const BADGE_W = 180;
 const BADGE_GAP = 12; // gap-3 = 12px
 
 export function LogoCloud({ lenders, speed = 45 }: LogoCloudProps) {
