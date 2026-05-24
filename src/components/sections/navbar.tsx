@@ -29,7 +29,7 @@ function MoeLogo({ className }: { className?: string }) {
         fontFamily="var(--font-body, 'Inter', 'Helvetica Neue', sans-serif)"
         fontSize={19}
         fontWeight={400}
-        fill="rgba(224,93,56,0.90)"
+        fill="rgba(255,255,255,0.45)"
         letterSpacing={3.0}
       >
         FINANCIAL
