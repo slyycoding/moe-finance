@@ -25,7 +25,7 @@ function MoeLogo({ className }: { className?: string }) {
       <line x1={148} y1={10} x2={148} y2={63} stroke="rgba(224,93,56,0.28)" strokeWidth={0.75} />
       {/* "FINANCIAL" — vertically centred, tighter spacing */}
       <text
-        x={161} y={44}
+        x={161} y={40}
         fontFamily="var(--font-body, 'Inter', 'Helvetica Neue', sans-serif)"
         fontSize={19}
         fontWeight={400}
