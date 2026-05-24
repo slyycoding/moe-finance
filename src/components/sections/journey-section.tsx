@@ -50,7 +50,7 @@ export function JourneySection() {
                   initial={{ opacity: 0, x: r ? 0 : -24 }}
                   animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: r ? 0 : -24 }}
                   transition={{ delay: 0.08 + i * 0.07, duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                  className="flex gap-4 sm:gap-6 group">
+                  className="flex items-center gap-4 sm:gap-6 group">
                   <div className="flex-shrink-0 relative z-10">
                     <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl border flex items-center justify-center"
                       style={{ background: `${step.accent}15`, borderColor: `${step.accent}35` }}>
