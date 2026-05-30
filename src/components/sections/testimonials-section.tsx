@@ -35,7 +35,7 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <div id="testimonials" className="py-16 sm:py-24" style={{ backgroundColor: "#131313" }}>
+    <div id="testimonials" className="py-16 sm:py-24" style={{ backgroundColor: "#0F2044" }}>
       <div className="container mx-auto">
         <div className="max-w-xl mx-auto text-center mb-12">
           <span className="label-chip mb-4 inline-block">Client Reviews</span>
@@ -60,14 +60,14 @@ export function TestimonialsSection() {
             <li
               key={id}
               className="swipe-card flex flex-col p-6 sm:p-7 rounded-xl"
-              style={{ backgroundColor: "#0A0A0A", border: "1px solid rgba(255,255,255,0.07)" }}
+              style={{ backgroundColor: "#0C1A38", border: "1px solid rgba(255,255,255,0.07)" }}
             >
               <div
                 className="flex items-center gap-0.5 mb-4"
                 aria-label={`${rating} out of 5 stars`}
               >
                 {Array.from({ length: rating }).map((_, i) => (
-                  <Star key={i} className="w-4 h-4" style={{ fill: "#C4922A", color: "#C4922A" }} aria-hidden />
+                  <Star key={i} className="w-4 h-4" style={{ fill: "#F0A500", color: "#F0A500" }} aria-hidden />
                 ))}
               </div>
               <blockquote className="text-sm sm:text-base leading-relaxed mb-5 flex-1" style={{ color: "rgba(240,237,232,0.7)" }}>

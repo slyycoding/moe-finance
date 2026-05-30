@@ -31,7 +31,7 @@ const steps = [
 
 export function JourneySection() {
   return (
-    <div id="process" className="py-16 sm:py-24" style={{ backgroundColor: "#131313" }}>
+    <div id="process" className="py-16 sm:py-24" style={{ backgroundColor: "#0F2044" }}>
       <div className="container mx-auto">
         <div className="max-w-xl mx-auto text-center mb-12">
           <span className="label-chip mb-4 inline-block">How It Works</span>
@@ -55,21 +55,21 @@ export function JourneySection() {
             <li
               key={n}
               className="swipe-card flex gap-4 p-6 rounded-xl"
-              style={{ backgroundColor: "#0A0A0A", border: "1px solid rgba(255,255,255,0.07)" }}
+              style={{ backgroundColor: "#0C1A38", border: "1px solid rgba(255,255,255,0.07)" }}
             >
               <div className="flex-shrink-0 mt-0.5">
                 <div
                   className="w-10 h-10 rounded-lg flex items-center justify-center"
-                  style={{ backgroundColor: "rgba(196,146,42,0.12)", border: "1px solid rgba(196,146,42,0.25)" }}
+                  style={{ backgroundColor: "rgba(240,165,0,0.12)", border: "1px solid rgba(240,165,0,0.25)" }}
                   aria-hidden
                 >
-                  <Icon className="w-5 h-5" style={{ color: "#C4922A" }} strokeWidth={1.75} />
+                  <Icon className="w-5 h-5" style={{ color: "#F0A500" }} strokeWidth={1.75} />
                 </div>
               </div>
               <div>
                 <p
                   className="text-xs font-bold uppercase tracking-widest mb-1"
-                  style={{ color: "#C4922A" }}
+                  style={{ color: "#F0A500" }}
                   aria-hidden
                 >
                   {n}

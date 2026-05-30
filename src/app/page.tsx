@@ -17,7 +17,7 @@ export default function Home() {
         <Navbar />
       </header>
 
-      <main id="main-content" style={{ backgroundColor: "#0A0A0A" }}>
+      <main id="main-content" style={{ backgroundColor: "#0C1A38" }}>
         <section aria-label="Hero">
           <HeroSection />
         </section>

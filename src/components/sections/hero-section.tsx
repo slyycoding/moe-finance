@@ -12,7 +12,7 @@ export function HeroSection() {
   return (
     <div
       className="relative pt-28 sm:pt-32 pb-20 sm:pb-24"
-      style={{ backgroundColor: "#0A0A0A" }}
+      style={{ backgroundColor: "#0C1A38" }}
     >
       {/* Subtle radial glow */}
       <div
@@ -24,7 +24,7 @@ export function HeroSection() {
           transform: "translateX(-50%)",
           width: "700px",
           height: "400px",
-          background: "radial-gradient(ellipse at 50% 0%, rgba(196,146,42,0.08) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse at 50% 0%, rgba(30,80,180,0.2) 0%, transparent 70%)",
           pointerEvents: "none",
         }}
       />
@@ -42,7 +42,7 @@ export function HeroSection() {
             style={{ fontFamily: "var(--font-heading)", letterSpacing: "-0.025em", color: "#F0EDE8" }}
           >
             Finance Solutions{" "}
-            <span style={{ color: "#C4922A" }}>Tailored To Your Goals</span>
+            <span style={{ color: "#F0A500" }}>Tailored To Your Goals</span>
           </h1>
 
           {/* Subheading */}
@@ -96,7 +96,7 @@ export function HeroSection() {
               <div key={label} className="text-center">
                 <p
                   className="text-3xl sm:text-4xl font-bold mb-1"
-                  style={{ fontFamily: "var(--font-heading)", color: "#C4922A" }}
+                  style={{ fontFamily: "var(--font-heading)", color: "#F0A500" }}
                 >
                   {value}
                 </p>
@@ -116,7 +116,7 @@ export function HeroSection() {
               href="tel:+61481293396"
               className="font-medium transition-colors duration-200"
               style={{ color: "rgba(240,237,232,0.55)" }}
-              onMouseEnter={e => (e.currentTarget.style.color = "#C4922A")}
+              onMouseEnter={e => (e.currentTarget.style.color = "#F0A500")}
               onMouseLeave={e => (e.currentTarget.style.color = "rgba(240,237,232,0.55)")}
             >
               +61 481 293 396

@@ -17,11 +17,11 @@ export default function ContactPage() {
         <Navbar />
       </header>
 
-      <main id="main-content" style={{ backgroundColor: "#0A0A0A" }}>
+      <main id="main-content" style={{ backgroundColor: "#0C1A38" }}>
         {/* Page header */}
         <div
           className="pt-28 sm:pt-32 pb-12 sm:pb-16 text-center"
-          style={{ backgroundColor: "#0A0A0A" }}
+          style={{ backgroundColor: "#0C1A38" }}
         >
           <div className="container mx-auto">
             <span className="label-chip mb-5 inline-block">Free Consultation</span>

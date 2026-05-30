@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 export function BookingCtaSection() {
   return (
-    <div className="py-20 sm:py-28" style={{ backgroundColor: "#131313" }}>
+    <div className="py-20 sm:py-28" style={{ backgroundColor: "#0F2044" }}>
       <div className="container mx-auto">
         <div className="max-w-2xl mx-auto text-center">
           <span className="label-chip mb-6 inline-block">Get Started</span>

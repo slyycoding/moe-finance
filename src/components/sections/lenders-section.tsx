@@ -156,7 +156,7 @@ function LenderItem({ name, svg }: { name: string; svg: React.ReactNode }) {
 
 export function LendersSection() {
   return (
-    <div className="py-14 sm:py-16" style={{ backgroundColor: "#0D0D0D", borderTop: "1px solid rgba(255,255,255,0.06)", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+    <div className="py-14 sm:py-16" style={{ backgroundColor: "#0A1528", borderTop: "1px solid rgba(255,255,255,0.06)", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
       <p
         className="text-center text-xs font-semibold uppercase tracking-widest mb-8"
         style={{ color: "rgba(240,237,232,0.3)" }}

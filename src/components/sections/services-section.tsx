@@ -32,7 +32,7 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <div id="services" className="py-16 sm:py-24" style={{ backgroundColor: "#0A0A0A" }}>
+    <div id="services" className="py-16 sm:py-24" style={{ backgroundColor: "#0C1A38" }}>
       <div className="container mx-auto">
         <div className="max-w-xl mx-auto text-center mb-12">
           <span className="label-chip mb-4 inline-block">What We Offer</span>
@@ -57,12 +57,12 @@ export function ServicesSection() {
               key={title}
               className="swipe-card flex flex-col p-6 rounded-xl transition-all duration-200 group"
               style={{
-                backgroundColor: "#131313",
+                backgroundColor: "#0F2044",
                 border: "1px solid rgba(255,255,255,0.07)",
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.borderColor = "rgba(196,146,42,0.3)";
-                e.currentTarget.style.backgroundColor = "#161616";
+                e.currentTarget.style.borderColor = "rgba(240,165,0,0.3)";
+                e.currentTarget.style.backgroundColor = "#132249";
               }}
               onMouseLeave={e => {
                 e.currentTarget.style.borderColor = "rgba(255,255,255,0.07)";
@@ -71,10 +71,10 @@ export function ServicesSection() {
             >
               <div
                 className="w-11 h-11 rounded-lg flex items-center justify-center mb-5 flex-shrink-0"
-                style={{ backgroundColor: "rgba(196,146,42,0.12)", border: "1px solid rgba(196,146,42,0.25)" }}
+                style={{ backgroundColor: "rgba(240,165,0,0.12)", border: "1px solid rgba(240,165,0,0.25)" }}
                 aria-hidden
               >
-                <Icon className="w-5 h-5" style={{ color: "#C4922A" }} strokeWidth={1.75} />
+                <Icon className="w-5 h-5" style={{ color: "#F0A500" }} strokeWidth={1.75} />
               </div>
               <h3
                 className="font-semibold text-base mb-2"
@@ -89,7 +89,7 @@ export function ServicesSection() {
                 href="/contact"
                 aria-label={`Enquire about ${title}`}
                 className="inline-flex items-center gap-1.5 text-sm font-semibold transition-colors duration-200"
-                style={{ color: "#C4922A" }}
+                style={{ color: "#F0A500" }}
               >
                 Enquire Now
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" aria-hidden />
@@ -103,7 +103,7 @@ export function ServicesSection() {
           <a
             href="/contact"
             className="font-medium underline underline-offset-2 transition-colors duration-200"
-            style={{ color: "#C4922A" }}
+            style={{ color: "#F0A500" }}
             aria-label="Ask Moe about finance options"
           >
             Ask Moe

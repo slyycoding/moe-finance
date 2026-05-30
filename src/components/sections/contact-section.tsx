@@ -29,7 +29,7 @@ const fieldStyle: React.CSSProperties = {
   border: "1px solid rgba(255,255,255,0.1)",
   fontSize: "16px",
   color: "#F0EDE8",
-  backgroundColor: "#0A0A0A",
+  backgroundColor: "#0C1A38",
   outline: "none",
   transition: "border-color 0.15s ease",
 };
@@ -80,7 +80,7 @@ export function ContactSection() {
   }
 
   return (
-    <div className="py-16 sm:py-24" style={{ backgroundColor: "#0A0A0A" }}>
+    <div className="py-16 sm:py-24" style={{ backgroundColor: "#0C1A38" }}>
       <div className="container mx-auto">
         <div className="max-w-4xl mx-auto">
           <div className="max-w-xl mx-auto text-center mb-12">
@@ -104,10 +104,10 @@ export function ContactSection() {
                 <div key={label} className="flex items-start gap-3">
                   <div
                     className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5"
-                    style={{ backgroundColor: "rgba(196,146,42,0.12)", border: "1px solid rgba(196,146,42,0.25)" }}
+                    style={{ backgroundColor: "rgba(240,165,0,0.12)", border: "1px solid rgba(240,165,0,0.25)" }}
                     aria-hidden
                   >
-                    <Icon className="w-4 h-4" style={{ color: "#C4922A" }} strokeWidth={1.75} />
+                    <Icon className="w-4 h-4" style={{ color: "#F0A500" }} strokeWidth={1.75} />
                   </div>
                   <div>
                     <p className="text-xs uppercase tracking-widest mb-0.5" style={{ color: "rgba(240,237,232,0.3)" }}>
@@ -118,7 +118,7 @@ export function ContactSection() {
                         href={href}
                         className="font-medium text-sm transition-colors duration-200"
                         style={{ color: "rgba(240,237,232,0.7)" }}
-                        onMouseEnter={e => (e.currentTarget.style.color = "#C4922A")}
+                        onMouseEnter={e => (e.currentTarget.style.color = "#F0A500")}
                         onMouseLeave={e => (e.currentTarget.style.color = "rgba(240,237,232,0.7)")}
                       >
                         {value}
@@ -140,11 +140,11 @@ export function ContactSection() {
             {/* Right — form */}
             <div
               className="rounded-xl p-6 sm:p-8"
-              style={{ backgroundColor: "#131313", border: "1px solid rgba(255,255,255,0.07)" }}
+              style={{ backgroundColor: "#0F2044", border: "1px solid rgba(255,255,255,0.07)" }}
             >
               {status === "success" ? (
                 <div className="flex flex-col items-center justify-center gap-4 py-10 text-center">
-                  <CheckCircle className="w-10 h-10" style={{ color: "#C4922A" }} strokeWidth={1.5} />
+                  <CheckCircle className="w-10 h-10" style={{ color: "#F0A500" }} strokeWidth={1.5} />
                   <div>
                     <p
                       className="font-bold text-lg mb-1"
@@ -159,7 +159,7 @@ export function ContactSection() {
                   <button
                     onClick={() => setStatus("idle")}
                     className="text-sm underline underline-offset-2 transition-colors duration-200"
-                    style={{ color: "#C4922A" }}
+                    style={{ color: "#F0A500" }}
                   >
                     Send another message
                   </button>
@@ -186,7 +186,7 @@ export function ContactSection() {
                       autoComplete="name"
                       placeholder="Your full name"
                       style={fieldStyle}
-                      onFocus={e => (e.currentTarget.style.borderColor = "#C4922A")}
+                      onFocus={e => (e.currentTarget.style.borderColor = "#F0A500")}
                       onBlur={e => (e.currentTarget.style.borderColor = errors.name ? "#ef4444" : "rgba(255,255,255,0.1)")}
                       aria-invalid={!!errors.name}
                       aria-describedby={errors.name ? `${ids.name}-err` : undefined}
@@ -208,7 +208,7 @@ export function ContactSection() {
                         autoComplete="tel"
                         placeholder="04XX XXX XXX"
                         style={fieldStyle}
-                        onFocus={e => (e.currentTarget.style.borderColor = "#C4922A")}
+                        onFocus={e => (e.currentTarget.style.borderColor = "#F0A500")}
                         onBlur={e => (e.currentTarget.style.borderColor = errors.phone ? "#ef4444" : "rgba(255,255,255,0.1)")}
                         aria-invalid={!!errors.phone}
                         aria-describedby={errors.phone ? `${ids.phone}-err` : undefined}
@@ -228,7 +228,7 @@ export function ContactSection() {
                         autoComplete="email"
                         placeholder="your@email.com"
                         style={fieldStyle}
-                        onFocus={e => (e.currentTarget.style.borderColor = "#C4922A")}
+                        onFocus={e => (e.currentTarget.style.borderColor = "#F0A500")}
                         onBlur={e => (e.currentTarget.style.borderColor = errors.email ? "#ef4444" : "rgba(255,255,255,0.1)")}
                         aria-invalid={!!errors.email}
                         aria-describedby={errors.email ? `${ids.email}-err` : undefined}
@@ -247,12 +247,12 @@ export function ContactSection() {
                       id={ids.loanType}
                       name="loanType"
                       style={{ ...fieldStyle, appearance: "none", cursor: "pointer", color: "rgba(240,237,232,0.5)" }}
-                      onFocus={e => (e.currentTarget.style.borderColor = "#C4922A")}
+                      onFocus={e => (e.currentTarget.style.borderColor = "#F0A500")}
                       onBlur={e => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)")}
                     >
-                      <option value="" style={{ backgroundColor: "#131313" }}>Select finance type…</option>
+                      <option value="" style={{ backgroundColor: "#0F2044" }}>Select finance type…</option>
                       {loanTypes.map(t => (
-                        <option key={t} value={t} style={{ backgroundColor: "#131313", color: "#F0EDE8" }}>{t}</option>
+                        <option key={t} value={t} style={{ backgroundColor: "#0F2044", color: "#F0EDE8" }}>{t}</option>
                       ))}
                     </select>
                   </div>
@@ -267,7 +267,7 @@ export function ContactSection() {
                       rows={3}
                       placeholder="Tell Moe about your situation — timeframe, loan amount, any questions…"
                       style={{ ...fieldStyle, resize: "none" }}
-                      onFocus={e => (e.currentTarget.style.borderColor = "#C4922A")}
+                      onFocus={e => (e.currentTarget.style.borderColor = "#F0A500")}
                       onBlur={e => (e.currentTarget.style.borderColor = errors.message ? "#ef4444" : "rgba(255,255,255,0.1)")}
                       aria-invalid={!!errors.message}
                       aria-describedby={errors.message ? `${ids.message}-err` : undefined}
@@ -281,9 +281,9 @@ export function ContactSection() {
                     type="submit"
                     disabled={status === "submitting"}
                     className="w-full flex items-center justify-center gap-2 py-4 rounded-xl font-bold text-base transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed group"
-                    style={{ backgroundColor: "#C4922A", color: "#0A0A0A", minHeight: "52px" }}
-                    onMouseEnter={e => { if (status !== "submitting") e.currentTarget.style.backgroundColor = "#A67720"; }}
-                    onMouseLeave={e => (e.currentTarget.style.backgroundColor = "#C4922A")}
+                    style={{ backgroundColor: "#F0A500", color: "#0A0A0A", minHeight: "52px" }}
+                    onMouseEnter={e => { if (status !== "submitting") e.currentTarget.style.backgroundColor = "#D48F00"; }}
+                    onMouseLeave={e => (e.currentTarget.style.backgroundColor = "#F0A500")}
                   >
                     {status === "submitting" ? "Sending…" : "Send Message"}
                     {status !== "submitting" && (

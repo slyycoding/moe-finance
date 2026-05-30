@@ -18,7 +18,7 @@ const highlights = [
 
 export function AboutSection() {
   return (
-    <div id="about" className="py-16 sm:py-24" style={{ backgroundColor: "#0A0A0A" }}>
+    <div id="about" className="py-16 sm:py-24" style={{ backgroundColor: "#0C1A38" }}>
       <div className="container mx-auto">
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
@@ -53,7 +53,7 @@ export function AboutSection() {
                   <li key={q} className="flex items-start gap-3">
                     <CheckCircle2
                       className="w-4 h-4 flex-shrink-0 mt-0.5"
-                      style={{ color: "#C4922A" }}
+                      style={{ color: "#F0A500" }}
                       aria-hidden
                     />
                     <span className="text-sm" style={{ color: "rgba(240,237,232,0.6)" }}>{q}</span>
@@ -66,13 +66,13 @@ export function AboutSection() {
             <div className="flex flex-col gap-6">
               <div
                 className="grid grid-cols-3 gap-4 p-6 rounded-xl"
-                style={{ backgroundColor: "#131313", border: "1px solid rgba(255,255,255,0.07)" }}
+                style={{ backgroundColor: "#0F2044", border: "1px solid rgba(255,255,255,0.07)" }}
               >
                 {highlights.map(({ value, label }) => (
                   <div key={label} className="text-center">
                     <p
                       className="text-2xl sm:text-3xl font-bold mb-1"
-                      style={{ fontFamily: "var(--font-heading)", color: "#C4922A" }}
+                      style={{ fontFamily: "var(--font-heading)", color: "#F0A500" }}
                     >
                       {value}
                     </p>
@@ -85,7 +85,7 @@ export function AboutSection() {
 
               <div
                 className="p-6 rounded-xl"
-                style={{ backgroundColor: "rgba(196,146,42,0.08)", border: "1px solid rgba(196,146,42,0.2)" }}
+                style={{ backgroundColor: "rgba(240,165,0,0.08)", border: "1px solid rgba(240,165,0,0.2)" }}
               >
                 <p
                   className="text-sm leading-relaxed italic mb-4"
@@ -93,7 +93,7 @@ export function AboutSection() {
                 >
                   &ldquo;With Moe, it&apos;s never simply a &lsquo;no&rsquo; — there is always an option, strategy or pathway worth exploring.&rdquo;
                 </p>
-                <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#C4922A" }}>
+                <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#F0A500" }}>
                   — The Moe Financial Philosophy
                 </p>
               </div>

@@ -11,20 +11,20 @@ function MoeLogoLight({ className }: { className?: string }) {
         fontSize={40}
         fontWeight={400}
         fill="transparent"
-        stroke="#C4922A"
+        stroke="#F0A500"
         strokeWidth={1.8}
         strokeLinejoin="round"
         letterSpacing={-1}
       >
         Moe
       </text>
-      <line x1="90" y1="6" x2="90" y2="38" stroke="#C4922A" strokeWidth={0.75} opacity={0.4} />
+      <line x1="90" y1="6" x2="90" y2="38" stroke="#F0A500" strokeWidth={0.75} opacity={0.4} />
       <text
         x={97} y="26"
         fontFamily="var(--font-body, 'Inter', sans-serif)"
         fontSize={11}
         fontWeight={500}
-        fill="rgba(240,237,232,0.35)"
+        fill="rgba(244,241,236,0.35)"
         letterSpacing={2.5}
       >
         FINANCIAL
@@ -58,11 +58,11 @@ const companyLinks = [
 ];
 
 const linkColor = "rgba(240,237,232,0.4)";
-const linkHoverColor = "#C4922A";
+const linkHoverColor = "#F0A500";
 
 export function FooterSection() {
   return (
-    <footer style={{ backgroundColor: "#080808" }} className="px-4 py-12 sm:py-14">
+    <footer style={{ backgroundColor: "#060E1F" }} className="px-4 py-12 sm:py-14">
       <div className="container mx-auto">
         <div
           className="grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-10 mb-10 pb-10"
@@ -72,7 +72,7 @@ export function FooterSection() {
           {/* Brand */}
           <div className="col-span-2 sm:col-span-1 space-y-4">
             <MoeLogoLight className="h-9 w-auto" />
-            <p className="text-sm leading-relaxed" style={{ color: "rgba(240,237,232,0.35)" }}>
+            <p className="text-sm leading-relaxed" style={{ color: "rgba(244,241,236,0.35)" }}>
               Melbourne&apos;s trusted finance broker — home loans, refinancing, vehicle finance and business lending across Australia since 2021.
             </p>
             <div className="space-y-2">
@@ -188,16 +188,16 @@ export function FooterSection() {
             className="flex-shrink-0 inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border text-xs font-medium transition-all duration-200 group"
             style={{
               borderColor: "rgba(255,255,255,0.1)",
-              color: "rgba(240,237,232,0.35)",
+              color: "rgba(244,241,236,0.35)",
               minHeight: "36px",
             }}
             onMouseEnter={e => {
-              e.currentTarget.style.borderColor = "#C4922A";
-              e.currentTarget.style.color = "#C4922A";
+              e.currentTarget.style.borderColor = "#F0A500";
+              e.currentTarget.style.color = "#F0A500";
             }}
             onMouseLeave={e => {
               e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)";
-              e.currentTarget.style.color = "rgba(240,237,232,0.35)";
+              e.currentTarget.style.color = "rgba(244,241,236,0.35)";
             }}
           >
             Book A Call

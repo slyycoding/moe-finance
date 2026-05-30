@@ -32,7 +32,7 @@ const reasons = [
 
 export function WhySection() {
   return (
-    <div id="why" className="py-16 sm:py-24" style={{ backgroundColor: "#0A0A0A" }}>
+    <div id="why" className="py-16 sm:py-24" style={{ backgroundColor: "#0C1A38" }}>
       <div className="container mx-auto">
         <div className="max-w-xl mx-auto text-center mb-12">
           <span className="label-chip mb-4 inline-block">Why Choose Us</span>
@@ -56,10 +56,10 @@ export function WhySection() {
             <li
               key={title}
               className={`swipe-card p-6 rounded-xl transition-all duration-200${i === 4 ? " sm:col-span-2 lg:col-span-1" : ""}`}
-              style={{ backgroundColor: "#131313", border: "1px solid rgba(255,255,255,0.07)" }}
+              style={{ backgroundColor: "#0F2044", border: "1px solid rgba(255,255,255,0.07)" }}
               onMouseEnter={e => {
-                e.currentTarget.style.borderColor = "rgba(196,146,42,0.3)";
-                e.currentTarget.style.backgroundColor = "#161616";
+                e.currentTarget.style.borderColor = "rgba(240,165,0,0.3)";
+                e.currentTarget.style.backgroundColor = "#132249";
               }}
               onMouseLeave={e => {
                 e.currentTarget.style.borderColor = "rgba(255,255,255,0.07)";
@@ -68,10 +68,10 @@ export function WhySection() {
             >
               <div
                 className="w-11 h-11 rounded-lg flex items-center justify-center mb-4"
-                style={{ backgroundColor: "rgba(196,146,42,0.12)", border: "1px solid rgba(196,146,42,0.25)" }}
+                style={{ backgroundColor: "rgba(240,165,0,0.12)", border: "1px solid rgba(240,165,0,0.25)" }}
                 aria-hidden
               >
-                <Icon className="w-5 h-5" style={{ color: "#C4922A" }} strokeWidth={1.75} />
+                <Icon className="w-5 h-5" style={{ color: "#F0A500" }} strokeWidth={1.75} />
               </div>
               <h3
                 className="font-semibold text-base mb-2"

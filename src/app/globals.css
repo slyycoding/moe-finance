@@ -16,22 +16,22 @@
 }
 
 :root {
-  --bg: #0A0A0A;
-  --surface: #131313;
-  --surface-mid: #1A1A1A;
-  --on-surface: #F0EDE8;
-  --muted: rgba(240, 237, 232, 0.52);
-  --muted-lo: rgba(240, 237, 232, 0.28);
-  --accent: #C4922A;
-  --accent-hover: #A67720;
-  --accent-light: rgba(196, 146, 42, 0.12);
-  --accent-border: rgba(196, 146, 42, 0.3);
-  --border: rgba(255, 255, 255, 0.07);
-  --border-hi: rgba(255, 255, 255, 0.12);
+  --bg: #0C1A38;
+  --surface: #0F2044;
+  --surface-mid: #152A58;
+  --on-surface: #F4F1EC;
+  --muted: rgba(244, 241, 236, 0.52);
+  --muted-lo: rgba(244, 241, 236, 0.28);
+  --accent: #F0A500;
+  --accent-hover: #D48F00;
+  --accent-light: rgba(240, 165, 0, 0.12);
+  --accent-border: rgba(240, 165, 0, 0.35);
+  --border: rgba(255, 255, 255, 0.08);
+  --border-hi: rgba(255, 255, 255, 0.14);
   --radius: 0.75rem;
   /* backward-compat aliases */
-  --background: #0A0A0A;
-  --foreground: #F0EDE8;
+  --background: #0C1A38;
+  --foreground: #F4F1EC;
 }
 
 /* ─── Base ─────────────────────────────────────────────── */
@@ -90,7 +90,7 @@
   gap: 0.5rem;
   padding: 0.875rem 1.75rem;
   background-color: var(--accent);
-  color: #0A0A0A;
+  color: #0C1A38;
   font-weight: 700;
   font-size: 0.9375rem;
   border-radius: 8px;
@@ -117,7 +117,7 @@
   justify-content: center;
   gap: 0.5rem;
   padding: 0.875rem 1.75rem;
-  background-color: #0A0A0A;
+  background-color: #0C1A38;
   color: var(--on-surface);
   font-weight: 700;
   font-size: 0.9375rem;
@@ -145,11 +145,11 @@
   gap: 0.5rem;
   padding: 0.875rem 1.75rem;
   background-color: transparent;
-  color: #0A0A0A;
+  color: #0C1A38;
   font-weight: 700;
   font-size: 0.9375rem;
   border-radius: 8px;
-  border: 1.5px solid rgba(10, 10, 10, 0.5);
+  border: 1.5px solid rgba(12, 26, 56, 0.5);
   cursor: pointer;
   transition: border-color 0.2s ease, opacity 0.2s ease, transform 0.1s ease;
   min-height: 48px;
@@ -158,7 +158,7 @@
 }
 
 .btn-dark-outline:hover {
-  border-color: rgba(10, 10, 10, 0.8);
+  border-color: rgba(12, 26, 56, 0.8);
 }
 
 .btn-dark-outline:active {
@@ -180,9 +180,9 @@
 }
 
 .label-chip-dark {
-  background-color: rgba(10, 10, 10, 0.15);
-  color: #0A0A0A;
-  border: 1px solid rgba(10, 10, 10, 0.2);
+  background-color: rgba(12, 26, 56, 0.15);
+  color: #0C1A38;
+  border: 1px solid rgba(12, 26, 56, 0.2);
 }
 
 /* ─── Section divider ────────────────────────────────────── */

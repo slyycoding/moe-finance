@@ -12,20 +12,20 @@ function MoeLogo({ className }: { className?: string }) {
         fontSize={40}
         fontWeight={400}
         fill="transparent"
-        stroke="#C4922A"
+        stroke="#F0A500"
         strokeWidth={1.8}
         strokeLinejoin="round"
         letterSpacing={-1}
       >
         Moe
       </text>
-      <line x1="90" y1="6" x2="90" y2="38" stroke="#C4922A" strokeWidth={0.75} opacity={0.4} />
+      <line x1="90" y1="6" x2="90" y2="38" stroke="#F0A500" strokeWidth={0.75} opacity={0.4} />
       <text
         x={97} y="26"
         fontFamily="var(--font-body, 'Inter', sans-serif)"
         fontSize={11}
         fontWeight={500}
-        fill="rgba(240,237,232,0.4)"
+        fill="rgba(244,241,236,0.45)"
         letterSpacing={2.5}
       >
         FINANCIAL
@@ -131,7 +131,7 @@ export function Navbar() {
         aria-label="Main navigation"
         className="fixed top-0 left-0 right-0 z-50 transition-all duration-200"
         style={{
-          backgroundColor: scrolled ? "rgba(10,10,10,0.96)" : "rgba(10,10,10,0.8)",
+          backgroundColor: scrolled ? "rgba(12,26,56,0.97)" : "rgba(12,26,56,0.88)",
           backdropFilter: "blur(12px)",
           WebkitBackdropFilter: "blur(12px)",
           borderBottom: scrolled ? "1px solid rgba(255,255,255,0.07)" : "1px solid transparent",
@@ -176,13 +176,13 @@ export function Navbar() {
                 href="/contact"
                 aria-label="Book a call with Moe"
                 className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg font-bold text-sm group transition-all duration-200"
-                style={{ backgroundColor: "#C4922A", color: "#0A0A0A", minHeight: "40px" }}
+                style={{ backgroundColor: "#F0A500", color: "#0A0A0A", minHeight: "40px" }}
                 onMouseEnter={e => {
-                  e.currentTarget.style.backgroundColor = "#A67720";
+                  e.currentTarget.style.backgroundColor = "#D48F00";
                   e.currentTarget.style.boxShadow = "0 0 0 3px rgba(196,146,42,0.2)";
                 }}
                 onMouseLeave={e => {
-                  e.currentTarget.style.backgroundColor = "#C4922A";
+                  e.currentTarget.style.backgroundColor = "#F0A500";
                   e.currentTarget.style.boxShadow = "none";
                 }}
               >
@@ -215,7 +215,7 @@ export function Navbar() {
           aria-modal="true"
           aria-label="Navigation menu"
           className="mobile-menu-enter fixed inset-0 z-40 flex flex-col pt-[68px]"
-          style={{ backgroundColor: "#0A0A0A" }}
+          style={{ backgroundColor: "#0C1A38" }}
         >
           <nav aria-label="Mobile navigation" className="flex flex-col flex-1 px-4 py-6 overflow-y-auto">
             <ul className="list-none space-y-0 mb-8" role="list">
@@ -248,7 +248,7 @@ export function Navbar() {
                 onClick={() => setMobileOpen(false)}
                 aria-label="Book a call with Moe"
                 className="mobile-cta-btn mobile-cta-primary flex items-center justify-center gap-2 py-4 rounded-xl font-bold text-base"
-                style={{ backgroundColor: "#C4922A", color: "#0A0A0A", minHeight: "54px" }}
+                style={{ backgroundColor: "#F0A500", color: "#0A0A0A", minHeight: "54px" }}
               >
                 Book A Call
                 <ArrowRight className="w-4 h-4" aria-hidden />
@@ -266,7 +266,7 @@ export function Navbar() {
                 }}
                 onMouseEnter={e => {
                   e.currentTarget.style.borderColor = "rgba(196,146,42,0.4)";
-                  e.currentTarget.style.color = "#C4922A";
+                  e.currentTarget.style.color = "#F0A500";
                 }}
                 onMouseLeave={e => {
                   e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)";
