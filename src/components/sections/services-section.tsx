@@ -32,17 +32,17 @@ const services = [
 
 export function ServicesSection() {
   return (
-    <div id="services" className="py-16 sm:py-24" style={{ backgroundColor: "#0C1A38" }}>
+    <div id="services" className="py-16 sm:py-24" style={{ backgroundColor: "#FFFFFF" }}>
       <div className="container mx-auto">
         <div className="max-w-xl mx-auto text-center mb-12">
-          <span className="label-chip mb-4 inline-block">What We Offer</span>
+          <span className="label-chip-navy mb-4 inline-block">What We Offer</span>
           <h2
             className="text-3xl sm:text-4xl font-bold mb-4"
-            style={{ fontFamily: "var(--font-heading)", letterSpacing: "-0.02em", color: "#F0EDE8" }}
+            style={{ fontFamily: "var(--font-heading)", letterSpacing: "-0.02em", color: "#1E293B" }}
           >
             Finance for Every Goal
           </h2>
-          <p className="text-base leading-relaxed" style={{ color: "rgba(240,237,232,0.52)" }}>
+          <p className="text-base leading-relaxed" style={{ color: "#64748B" }}>
             From your first home to growing your business — we find the right loan, with the right lender, at the right rate.
           </p>
         </div>
@@ -57,39 +57,41 @@ export function ServicesSection() {
               key={title}
               className="swipe-card flex flex-col p-6 rounded-xl transition-all duration-200 group"
               style={{
-                backgroundColor: "#0F2044",
-                border: "1px solid rgba(255,255,255,0.07)",
+                backgroundColor: "#FFFFFF",
+                border: "1px solid #E2E8F0",
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.borderColor = "rgba(240,165,0,0.3)";
-                e.currentTarget.style.backgroundColor = "#132249";
+                e.currentTarget.style.borderColor = "#C7D2FE";
+                e.currentTarget.style.boxShadow = "0 4px 20px rgba(20,26,93,0.08)";
               }}
               onMouseLeave={e => {
-                e.currentTarget.style.borderColor = "rgba(255,255,255,0.07)";
-                e.currentTarget.style.backgroundColor = "#131313";
+                e.currentTarget.style.borderColor = "#E2E8F0";
+                e.currentTarget.style.boxShadow = "none";
               }}
             >
               <div
                 className="w-11 h-11 rounded-lg flex items-center justify-center mb-5 flex-shrink-0"
-                style={{ backgroundColor: "rgba(240,165,0,0.12)", border: "1px solid rgba(240,165,0,0.25)" }}
+                style={{ backgroundColor: "#EEF2FF", border: "1px solid #C7D2FE" }}
                 aria-hidden
               >
-                <Icon className="w-5 h-5" style={{ color: "#F0A500" }} strokeWidth={1.75} />
+                <Icon className="w-5 h-5" style={{ color: "#141A5D" }} strokeWidth={1.75} />
               </div>
               <h3
                 className="font-semibold text-base mb-2"
-                style={{ fontFamily: "var(--font-heading)", color: "#F0EDE8" }}
+                style={{ fontFamily: "var(--font-heading)", color: "#1E293B" }}
               >
                 {title}
               </h3>
-              <p className="text-sm leading-relaxed flex-1 mb-5" style={{ color: "rgba(240,237,232,0.52)" }}>
+              <p className="text-sm leading-relaxed flex-1 mb-5" style={{ color: "#64748B" }}>
                 {desc}
               </p>
               <a
                 href="/contact"
                 aria-label={`Enquire about ${title}`}
                 className="inline-flex items-center gap-1.5 text-sm font-semibold transition-colors duration-200"
-                style={{ color: "#F0A500" }}
+                style={{ color: "#141A5D" }}
+                onMouseEnter={e => (e.currentTarget.style.color = "#F4C542")}
+                onMouseLeave={e => (e.currentTarget.style.color = "#141A5D")}
               >
                 Enquire Now
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" aria-hidden />
@@ -98,12 +100,12 @@ export function ServicesSection() {
           ))}
         </ul>
 
-        <p className="text-center text-sm" style={{ color: "rgba(240,237,232,0.35)" }}>
+        <p className="text-center text-sm" style={{ color: "#94A3B8" }}>
           Not sure which product is right for you?{" "}
           <a
             href="/contact"
             className="font-medium underline underline-offset-2 transition-colors duration-200"
-            style={{ color: "#F0A500" }}
+            style={{ color: "#141A5D" }}
             aria-label="Ask Moe about finance options"
           >
             Ask Moe

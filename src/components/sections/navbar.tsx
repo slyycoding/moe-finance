@@ -12,20 +12,20 @@ function MoeLogo({ className }: { className?: string }) {
         fontSize={40}
         fontWeight={400}
         fill="transparent"
-        stroke="#F0A500"
+        stroke="#F4C542"
         strokeWidth={1.8}
         strokeLinejoin="round"
         letterSpacing={-1}
       >
         Moe
       </text>
-      <line x1="90" y1="6" x2="90" y2="38" stroke="#F0A500" strokeWidth={0.75} opacity={0.4} />
+      <line x1="90" y1="6" x2="90" y2="38" stroke="#F4C542" strokeWidth={0.75} opacity={0.4} />
       <text
         x={97} y="26"
         fontFamily="var(--font-body, 'Inter', sans-serif)"
         fontSize={11}
         fontWeight={500}
-        fill="rgba(244,241,236,0.45)"
+        fill="rgba(255,255,255,0.5)"
         letterSpacing={2.5}
       >
         FINANCIAL
@@ -44,16 +44,10 @@ const navLinks = [
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
   const menuBtnRef = useRef<HTMLButtonElement>(null);
 
-  useEffect(() => {
-    setMounted(true);
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  useEffect(() => { setMounted(true); }, []);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -98,44 +92,27 @@ export function Navbar() {
         .mobile-cta-btn {
           transition: transform 0.15s ease, box-shadow 0.15s ease;
         }
-        .mobile-cta-btn:active {
-          transform: scale(0.97);
+        .mobile-cta-btn:active { transform: scale(0.97); }
+        .mobile-cta-primary:hover,
+        .mobile-cta-primary:focus-visible {
+          box-shadow: 0 0 0 3px rgba(244,197,66,0.3), 0 4px 16px rgba(244,197,66,0.2);
         }
-        .mobile-cta-primary:hover, .mobile-cta-primary:focus-visible {
-          box-shadow: 0 0 0 3px rgba(196,146,42,0.25), 0 4px 16px rgba(196,146,42,0.2);
-        }
-        .mobile-nav-link {
-          transition: background-color 0.15s ease, color 0.15s ease;
-        }
+        .mobile-nav-link { transition: background-color 0.15s ease, color 0.15s ease; }
         .mobile-nav-link:hover .nav-arrow,
-        .mobile-nav-link:active .nav-arrow {
-          transform: translateX(4px);
-        }
-        .mobile-nav-link:active {
-          background-color: rgba(255,255,255,0.04) !important;
-        }
-        .nav-arrow {
-          transition: transform 0.15s ease;
-        }
+        .mobile-nav-link:active .nav-arrow { transform: translateX(4px); }
+        .mobile-nav-link:active { background-color: rgba(255,255,255,0.06) !important; }
+        .nav-arrow { transition: transform 0.15s ease; }
         @media (prefers-reduced-motion: reduce) {
-          .mobile-menu-enter,
-          .mobile-nav-item,
-          .mobile-actions-enter {
-            animation: none;
-            opacity: 1;
+          .mobile-menu-enter, .mobile-nav-item, .mobile-actions-enter {
+            animation: none; opacity: 1;
           }
         }
       `}</style>
 
       <nav
         aria-label="Main navigation"
-        className="fixed top-0 left-0 right-0 z-50 transition-all duration-200"
-        style={{
-          backgroundColor: scrolled ? "rgba(12,26,56,0.97)" : "rgba(12,26,56,0.88)",
-          backdropFilter: "blur(12px)",
-          WebkitBackdropFilter: "blur(12px)",
-          borderBottom: scrolled ? "1px solid rgba(255,255,255,0.07)" : "1px solid transparent",
-        }}
+        className="fixed top-0 left-0 right-0 z-50"
+        style={{ backgroundColor: "#141A5D" }}
       >
         <div className="container mx-auto">
           <div className="flex items-center justify-between" style={{ height: "68px" }}>
@@ -150,9 +127,9 @@ export function Navbar() {
                   <a
                     href={href}
                     className="text-sm font-medium transition-colors duration-200"
-                    style={{ color: "rgba(240,237,232,0.6)" }}
-                    onMouseEnter={e => (e.currentTarget.style.color = "#F0EDE8")}
-                    onMouseLeave={e => (e.currentTarget.style.color = "rgba(240,237,232,0.6)")}
+                    style={{ color: "rgba(255,255,255,0.65)" }}
+                    onMouseEnter={e => (e.currentTarget.style.color = "#FFFFFF")}
+                    onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.65)")}
                   >
                     {label}
                   </a>
@@ -165,10 +142,10 @@ export function Navbar() {
               <a
                 href="tel:+61481293396"
                 className="text-sm font-medium transition-colors duration-200"
-                style={{ color: "rgba(240,237,232,0.5)" }}
+                style={{ color: "rgba(255,255,255,0.5)" }}
                 aria-label="Call Moe"
-                onMouseEnter={e => (e.currentTarget.style.color = "#F0EDE8")}
-                onMouseLeave={e => (e.currentTarget.style.color = "rgba(240,237,232,0.5)")}
+                onMouseEnter={e => (e.currentTarget.style.color = "#FFFFFF")}
+                onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.5)")}
               >
                 +61 481 293 396
               </a>
@@ -176,13 +153,13 @@ export function Navbar() {
                 href="/contact"
                 aria-label="Book a call with Moe"
                 className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg font-bold text-sm group transition-all duration-200"
-                style={{ backgroundColor: "#F0A500", color: "#0A0A0A", minHeight: "40px" }}
+                style={{ backgroundColor: "#F4C542", color: "#141A5D", minHeight: "40px" }}
                 onMouseEnter={e => {
-                  e.currentTarget.style.backgroundColor = "#D48F00";
-                  e.currentTarget.style.boxShadow = "0 0 0 3px rgba(196,146,42,0.2)";
+                  e.currentTarget.style.backgroundColor = "#E0B030";
+                  e.currentTarget.style.boxShadow = "0 0 0 3px rgba(244,197,66,0.25)";
                 }}
                 onMouseLeave={e => {
-                  e.currentTarget.style.backgroundColor = "#F0A500";
+                  e.currentTarget.style.backgroundColor = "#F4C542";
                   e.currentTarget.style.boxShadow = "none";
                 }}
               >
@@ -198,7 +175,7 @@ export function Navbar() {
               aria-expanded={mobileOpen}
               aria-controls="mobile-menu"
               className="md:hidden w-10 h-10 flex items-center justify-center rounded-lg transition-colors"
-              style={{ border: "1px solid rgba(255,255,255,0.1)", color: "rgba(240,237,232,0.7)" }}
+              style={{ border: "1px solid rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.8)" }}
               onClick={() => setMobileOpen(o => !o)}
             >
               {mobileOpen ? <X className="w-4 h-4" aria-hidden /> : <Menu className="w-4 h-4" aria-hidden />}
@@ -215,7 +192,7 @@ export function Navbar() {
           aria-modal="true"
           aria-label="Navigation menu"
           className="mobile-menu-enter fixed inset-0 z-40 flex flex-col pt-[68px]"
-          style={{ backgroundColor: "#0C1A38" }}
+          style={{ backgroundColor: "#141A5D" }}
         >
           <nav aria-label="Mobile navigation" className="flex flex-col flex-1 px-4 py-6 overflow-y-auto">
             <ul className="list-none space-y-0 mb-8" role="list">
@@ -226,14 +203,14 @@ export function Navbar() {
                     onClick={() => setMobileOpen(false)}
                     className="mobile-nav-link flex items-center justify-between py-4 px-3 rounded-lg text-base font-medium"
                     style={{
-                      borderBottom: "1px solid rgba(255,255,255,0.06)",
-                      color: "rgba(240,237,232,0.7)",
+                      borderBottom: "1px solid rgba(255,255,255,0.08)",
+                      color: "rgba(255,255,255,0.75)",
                     }}
                   >
                     {label}
                     <ArrowRight
                       className="nav-arrow w-4 h-4"
-                      style={{ color: "rgba(240,237,232,0.25)" }}
+                      style={{ color: "rgba(255,255,255,0.3)" }}
                       aria-hidden
                     />
                   </a>
@@ -248,7 +225,7 @@ export function Navbar() {
                 onClick={() => setMobileOpen(false)}
                 aria-label="Book a call with Moe"
                 className="mobile-cta-btn mobile-cta-primary flex items-center justify-center gap-2 py-4 rounded-xl font-bold text-base"
-                style={{ backgroundColor: "#F0A500", color: "#0A0A0A", minHeight: "54px" }}
+                style={{ backgroundColor: "#F4C542", color: "#141A5D", minHeight: "54px" }}
               >
                 Book A Call
                 <ArrowRight className="w-4 h-4" aria-hidden />
@@ -260,17 +237,17 @@ export function Navbar() {
                 aria-label="Call Moe on +61 481 293 396"
                 className="mobile-cta-btn flex items-center justify-center gap-2 py-4 rounded-xl font-semibold text-sm"
                 style={{
-                  border: "1.5px solid rgba(255,255,255,0.12)",
-                  color: "rgba(240,237,232,0.65)",
+                  border: "1.5px solid rgba(255,255,255,0.2)",
+                  color: "rgba(255,255,255,0.75)",
                   minHeight: "50px",
                 }}
                 onMouseEnter={e => {
-                  e.currentTarget.style.borderColor = "rgba(196,146,42,0.4)";
-                  e.currentTarget.style.color = "#F0A500";
+                  e.currentTarget.style.borderColor = "rgba(244,197,66,0.5)";
+                  e.currentTarget.style.color = "#F4C542";
                 }}
                 onMouseLeave={e => {
-                  e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)";
-                  e.currentTarget.style.color = "rgba(240,237,232,0.65)";
+                  e.currentTarget.style.borderColor = "rgba(255,255,255,0.2)";
+                  e.currentTarget.style.color = "rgba(255,255,255,0.75)";
                 }}
               >
                 <Phone className="w-4 h-4" aria-hidden />

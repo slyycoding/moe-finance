@@ -32,17 +32,17 @@ const reasons = [
 
 export function WhySection() {
   return (
-    <div id="why" className="py-16 sm:py-24" style={{ backgroundColor: "#0C1A38" }}>
+    <div id="why" className="py-16 sm:py-24" style={{ backgroundColor: "#FFFFFF" }}>
       <div className="container mx-auto">
         <div className="max-w-xl mx-auto text-center mb-12">
-          <span className="label-chip mb-4 inline-block">Why Choose Us</span>
+          <span className="label-chip-navy mb-4 inline-block">Why Choose Us</span>
           <h2
             className="text-3xl sm:text-4xl font-bold mb-4"
-            style={{ fontFamily: "var(--font-heading)", letterSpacing: "-0.02em", color: "#F0EDE8" }}
+            style={{ fontFamily: "var(--font-heading)", letterSpacing: "-0.02em", color: "#1E293B" }}
           >
             Why Choose Moe Financial
           </h2>
-          <p className="text-base leading-relaxed" style={{ color: "rgba(240,237,232,0.52)" }}>
+          <p className="text-base leading-relaxed" style={{ color: "#64748B" }}>
             We are not a bank. We work for you — finding the right lender, structuring the right deal, and staying with you long after settlement.
           </p>
         </div>
@@ -56,30 +56,33 @@ export function WhySection() {
             <li
               key={title}
               className={`swipe-card p-6 rounded-xl transition-all duration-200${i === 4 ? " sm:col-span-2 lg:col-span-1" : ""}`}
-              style={{ backgroundColor: "#0F2044", border: "1px solid rgba(255,255,255,0.07)" }}
+              style={{
+                backgroundColor: "#FFFFFF",
+                border: "1px solid #E2E8F0",
+              }}
               onMouseEnter={e => {
-                e.currentTarget.style.borderColor = "rgba(240,165,0,0.3)";
-                e.currentTarget.style.backgroundColor = "#132249";
+                e.currentTarget.style.borderColor = "#C7D2FE";
+                e.currentTarget.style.boxShadow = "0 4px 16px rgba(20,26,93,0.06)";
               }}
               onMouseLeave={e => {
-                e.currentTarget.style.borderColor = "rgba(255,255,255,0.07)";
-                e.currentTarget.style.backgroundColor = "#131313";
+                e.currentTarget.style.borderColor = "#E2E8F0";
+                e.currentTarget.style.boxShadow = "none";
               }}
             >
               <div
                 className="w-11 h-11 rounded-lg flex items-center justify-center mb-4"
-                style={{ backgroundColor: "rgba(240,165,0,0.12)", border: "1px solid rgba(240,165,0,0.25)" }}
+                style={{ backgroundColor: "#EEF2FF", border: "1px solid #C7D2FE" }}
                 aria-hidden
               >
-                <Icon className="w-5 h-5" style={{ color: "#F0A500" }} strokeWidth={1.75} />
+                <Icon className="w-5 h-5" style={{ color: "#141A5D" }} strokeWidth={1.75} />
               </div>
               <h3
                 className="font-semibold text-base mb-2"
-                style={{ fontFamily: "var(--font-heading)", color: "#F0EDE8" }}
+                style={{ fontFamily: "var(--font-heading)", color: "#1E293B" }}
               >
                 {title}
               </h3>
-              <p className="text-sm leading-relaxed" style={{ color: "rgba(240,237,232,0.52)" }}>
+              <p className="text-sm leading-relaxed" style={{ color: "#64748B" }}>
                 {desc}
               </p>
             </li>

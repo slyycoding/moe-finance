@@ -17,11 +17,11 @@ export default function ContactPage() {
         <Navbar />
       </header>
 
-      <main id="main-content" style={{ backgroundColor: "#0C1A38" }}>
+      <main id="main-content" style={{ backgroundColor: "#F8FAFC" }}>
         {/* Page header */}
         <div
           className="pt-28 sm:pt-32 pb-12 sm:pb-16 text-center"
-          style={{ backgroundColor: "#0C1A38" }}
+          style={{ backgroundColor: "#141A5D" }}
         >
           <div className="container mx-auto">
             <span className="label-chip mb-5 inline-block">Free Consultation</span>
@@ -30,14 +30,14 @@ export default function ContactPage() {
               style={{
                 fontFamily: "var(--font-heading)",
                 letterSpacing: "-0.025em",
-                color: "#F0EDE8",
+                color: "#FFFFFF",
               }}
             >
               Let&apos;s Talk Finance
             </h1>
             <p
               className="text-base sm:text-lg max-w-md mx-auto"
-              style={{ color: "rgba(240,237,232,0.52)" }}
+              style={{ color: "rgba(255,255,255,0.6)" }}
             >
               No pressure. No jargon. Just an honest conversation about your options.
             </p>

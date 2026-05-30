@@ -18,22 +18,22 @@ const highlights = [
 
 export function AboutSection() {
   return (
-    <div id="about" className="py-16 sm:py-24" style={{ backgroundColor: "#0C1A38" }}>
+    <div id="about" className="py-16 sm:py-24" style={{ backgroundColor: "#FFFFFF" }}>
       <div className="container mx-auto">
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
 
             {/* Left — copy */}
             <div>
-              <span className="label-chip mb-4 inline-block">About Moe</span>
+              <span className="label-chip-navy mb-4 inline-block">About Moe</span>
               <h2
                 className="text-3xl sm:text-4xl font-bold mb-6"
-                style={{ fontFamily: "var(--font-heading)", letterSpacing: "-0.02em", color: "#F0EDE8" }}
+                style={{ fontFamily: "var(--font-heading)", letterSpacing: "-0.02em", color: "#1E293B" }}
               >
                 A Broker Who Actually Works For You
               </h2>
 
-              <div className="space-y-4 text-base leading-relaxed mb-8" style={{ color: "rgba(240,237,232,0.55)" }}>
+              <div className="space-y-4 text-base leading-relaxed mb-8" style={{ color: "#64748B" }}>
                 <p>
                   Mohammed Elsayyed — known as Moe — is a Melbourne-based finance broker with over four years of experience helping Australians access the right lending solutions.
                 </p>
@@ -53,10 +53,10 @@ export function AboutSection() {
                   <li key={q} className="flex items-start gap-3">
                     <CheckCircle2
                       className="w-4 h-4 flex-shrink-0 mt-0.5"
-                      style={{ color: "#F0A500" }}
+                      style={{ color: "#141A5D" }}
                       aria-hidden
                     />
-                    <span className="text-sm" style={{ color: "rgba(240,237,232,0.6)" }}>{q}</span>
+                    <span className="text-sm" style={{ color: "#475569" }}>{q}</span>
                   </li>
                 ))}
               </ul>
@@ -66,17 +66,17 @@ export function AboutSection() {
             <div className="flex flex-col gap-6">
               <div
                 className="grid grid-cols-3 gap-4 p-6 rounded-xl"
-                style={{ backgroundColor: "#0F2044", border: "1px solid rgba(255,255,255,0.07)" }}
+                style={{ backgroundColor: "#F8FAFC", border: "1px solid #E2E8F0" }}
               >
                 {highlights.map(({ value, label }) => (
                   <div key={label} className="text-center">
                     <p
                       className="text-2xl sm:text-3xl font-bold mb-1"
-                      style={{ fontFamily: "var(--font-heading)", color: "#F0A500" }}
+                      style={{ fontFamily: "var(--font-heading)", color: "#141A5D" }}
                     >
                       {value}
                     </p>
-                    <p className="text-xs leading-tight" style={{ color: "rgba(240,237,232,0.4)" }}>
+                    <p className="text-xs leading-tight" style={{ color: "#64748B" }}>
                       {label}
                     </p>
                   </div>
@@ -85,15 +85,15 @@ export function AboutSection() {
 
               <div
                 className="p-6 rounded-xl"
-                style={{ backgroundColor: "rgba(240,165,0,0.08)", border: "1px solid rgba(240,165,0,0.2)" }}
+                style={{ backgroundColor: "#EEF2FF", border: "1px solid #C7D2FE" }}
               >
                 <p
                   className="text-sm leading-relaxed italic mb-4"
-                  style={{ color: "rgba(240,237,232,0.65)" }}
+                  style={{ color: "#334155" }}
                 >
                   &ldquo;With Moe, it&apos;s never simply a &lsquo;no&rsquo; — there is always an option, strategy or pathway worth exploring.&rdquo;
                 </p>
-                <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#F0A500" }}>
+                <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#141A5D" }}>
                   — The Moe Financial Philosophy
                 </p>
               </div>
