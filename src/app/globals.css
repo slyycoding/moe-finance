@@ -1,42 +1,13 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import "shadcn/tailwind.css";
-
-@custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
   --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
   --font-sans: var(--font-body);
   --font-heading: var(--font-heading);
   --radius-sm: calc(var(--radius) * 0.6);
@@ -46,39 +17,21 @@
 }
 
 :root {
-  --primary: #e05d38;
-  --primary-foreground: #ffffff;
-  --secondary: #1a2236;
-  --secondary-foreground: #e5e5e5;
-  --background: #080d18;
-  --foreground: #e5e5e5;
-  --card: #0f1729;
-  --card-foreground: #e5e5e5;
-  --border: rgba(255,255,255,0.08);
-  --input: #1a2236;
-  --ring: #e05d38;
-  --muted: #131c2e;
-  --muted-foreground: #6b7280;
-  --accent: #1a2848;
-  --accent-foreground: #bfdbfe;
-  --destructive: #ef4444;
-  --destructive-foreground: #ffffff;
-  --popover: #0f1729;
-  --popover-foreground: #e5e5e5;
-  --sidebar: #0f1729;
-  --sidebar-foreground: #e5e5e5;
-  --sidebar-primary: #e05d38;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #1a2848;
-  --sidebar-accent-foreground: #bfdbfe;
-  --sidebar-border: rgba(255,255,255,0.08);
-  --sidebar-ring: #e05d38;
-  --chart-1: #e05d38;
-  --chart-2: #86a7c8;
-  --chart-3: #5a7ca6;
-  --chart-4: #466494;
-  --chart-5: #334c82;
-  --radius: 0.875rem;
+  --background: #ffffff;
+  --background-alt: #F8F7F4;
+  --background-dark: #111827;
+  --foreground: #111827;
+  --foreground-secondary: #6B7280;
+  --foreground-muted: #9CA3AF;
+  --accent: #C4922A;
+  --accent-hover: #A67720;
+  --accent-light: #FDF6E7;
+  --accent-border: #E8D5A3;
+  --border: #E5E7EB;
+  --border-light: #F3F4F6;
+  --muted: #F9FAFB;
+  --muted-foreground: #6B7280;
+  --radius: 0.75rem;
 }
 
 /* ─── Base ─────────────────────────────────────────────── */
@@ -92,7 +45,8 @@
 
   body {
     overflow-x: hidden;
-    @apply bg-background text-foreground;
+    background-color: var(--background);
+    color: var(--foreground);
     font-feature-settings: "rlig" 1, "calt" 1;
     font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
     -webkit-text-size-adjust: 100%;
@@ -100,6 +54,7 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading), ui-sans-serif, system-ui, sans-serif;
+    color: var(--foreground);
   }
 
   /* Prevent iOS input zoom */
@@ -108,14 +63,14 @@
   }
 
   :focus-visible {
-    outline: 2px solid #e05d38;
+    outline: 2px solid var(--accent);
     outline-offset: 3px;
     border-radius: 4px;
   }
 
   button:focus-visible,
   a:focus-visible {
-    outline: 2px solid #e05d38;
+    outline: 2px solid var(--accent);
     outline-offset: 3px;
     border-radius: 6px;
   }
@@ -126,52 +81,63 @@
   }
 }
 
-/* ─── Grain noise overlay ───────────────────────────────── */
-/*
- * Static grain — no animation. A static fixed layer costs almost nothing;
- * the animated version (200%×200% translate) was eating GPU memory.
- */
-.grain::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  opacity: 0.02;
-  pointer-events: none;
-  z-index: 9999;
+/* ─── Button styles ──────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  background-color: var(--accent);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  min-height: 48px;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
-/* ─── Button shine ──────────────────────────────────────── */
-.btn-shine::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.14), transparent);
-  transform: translateX(-100%) skewX(-15deg);
-}
-.btn-shine:hover::after {
-  animation: shine 0.6s ease forwards;
+.btn-primary:hover {
+  background-color: var(--accent-hover);
 }
 
-@keyframes shine {
-  from { transform: translateX(-100%) skewX(-15deg); }
-  to   { transform: translateX(200%) skewX(-15deg); }
+.btn-primary:active {
+  transform: scale(0.98);
 }
 
-/* ─── CTA button pulse glow ─────────────────────────────── */
-.btn-pulse {
-  animation: ctaPulse 3.2s ease-in-out infinite;
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  background-color: transparent;
+  color: var(--foreground);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  border-radius: 6px;
+  border: 1.5px solid var(--border);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+  min-height: 48px;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
-@keyframes ctaPulse {
-  0%, 100% { box-shadow: 0 0 18px rgba(224,93,56,0.22), 0 2px 8px rgba(0,0,0,0.2); }
-  50%       { box-shadow: 0 0 32px rgba(224,93,56,0.42), 0 2px 8px rgba(0,0,0,0.2); }
+.btn-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
-/* ─── Glow divider ──────────────────────────────────────── */
-.glow-line {
+/* ─── Section divider ────────────────────────────────────── */
+.section-divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(224,93,56,0.4), transparent);
+  background: var(--border);
+  width: 100%;
 }
 
 /* ─── Reduced motion ────────────────────────────────────── */
@@ -181,18 +147,12 @@
     transition: none !important;
     scroll-behavior: auto !important;
   }
-  .grain::after { display: none; }
 }
 
-/* ─── Mobile performance ────────────────────────────────── */
+/* ─── Mobile ────────────────────────────────────────────── */
 @media (max-width: 767px) {
-  /* Kill grain on mobile entirely */
-  .grain::after { display: none; }
-
-  /* Disable scroll-based smooth scrolling — causes jank on iOS */
   html { scroll-behavior: auto; }
 
-  /* Strip ALL backdrop-filter on mobile — compositor cost is too high */
   * {
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
@@ -221,4 +181,28 @@
   overflow: visible;
   clip: auto;
   white-space: normal;
+}
+
+/* ─── Container ─────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
