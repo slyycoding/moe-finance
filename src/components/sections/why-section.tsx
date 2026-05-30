@@ -32,43 +32,56 @@ const reasons = [
 
 export function WhySection() {
   return (
-    <div className="py-16 sm:py-20 bg-white">
-      <div className="container mx-auto px-4 sm:px-6">
+    <div id="why" className="py-16 sm:py-24" style={{ backgroundColor: "#0A0A0A" }}>
+      <div className="container mx-auto">
         <div className="max-w-xl mx-auto text-center mb-12">
-          <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: "#C4922A" }}>
-            Why Choose Us
-          </p>
+          <span className="label-chip mb-4 inline-block">Why Choose Us</span>
           <h2
-            className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4"
-            style={{ fontFamily: "var(--font-heading)", letterSpacing: "-0.02em" }}
+            className="text-3xl sm:text-4xl font-bold mb-4"
+            style={{ fontFamily: "var(--font-heading)", letterSpacing: "-0.02em", color: "#F0EDE8" }}
           >
             Why Choose Moe Financial
           </h2>
-          <p className="text-gray-500 text-base leading-relaxed">
+          <p className="text-base leading-relaxed" style={{ color: "rgba(240,237,232,0.52)" }}>
             We are not a bank. We work for you — finding the right lender, structuring the right deal, and staying with you long after settlement.
           </p>
         </div>
 
-        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 list-none p-0 m-0" role="list">
+        {/* Desktop grid / Mobile swipe */}
+        <ul
+          className="swipe-list grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 list-none p-0 m-0"
+          role="list"
+        >
           {reasons.map(({ icon: Icon, title, desc }, i) => (
             <li
               key={title}
-              className={`p-6 rounded-xl border border-gray-100 bg-white hover:border-amber-200 hover:shadow-sm transition-all duration-200${i === 4 ? " sm:col-span-2 lg:col-span-1" : ""}`}
+              className={`swipe-card p-6 rounded-xl transition-all duration-200${i === 4 ? " sm:col-span-2 lg:col-span-1" : ""}`}
+              style={{ backgroundColor: "#131313", border: "1px solid rgba(255,255,255,0.07)" }}
+              onMouseEnter={e => {
+                e.currentTarget.style.borderColor = "rgba(196,146,42,0.3)";
+                e.currentTarget.style.backgroundColor = "#161616";
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.borderColor = "rgba(255,255,255,0.07)";
+                e.currentTarget.style.backgroundColor = "#131313";
+              }}
             >
               <div
                 className="w-11 h-11 rounded-lg flex items-center justify-center mb-4"
-                style={{ backgroundColor: "#FDF6E7", border: "1px solid #E8D5A3" }}
+                style={{ backgroundColor: "rgba(196,146,42,0.12)", border: "1px solid rgba(196,146,42,0.25)" }}
                 aria-hidden
               >
                 <Icon className="w-5 h-5" style={{ color: "#C4922A" }} strokeWidth={1.75} />
               </div>
               <h3
-                className="text-gray-900 font-semibold text-base mb-2"
-                style={{ fontFamily: "var(--font-heading)" }}
+                className="font-semibold text-base mb-2"
+                style={{ fontFamily: "var(--font-heading)", color: "#F0EDE8" }}
               >
                 {title}
               </h3>
-              <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
+              <p className="text-sm leading-relaxed" style={{ color: "rgba(240,237,232,0.52)" }}>
+                {desc}
+              </p>
             </li>
           ))}
         </ul>

@@ -5,7 +5,8 @@ import { JourneySection } from "@/components/sections/journey-section";
 import { WhySection } from "@/components/sections/why-section";
 import { TestimonialsSection } from "@/components/sections/testimonials-section";
 import { AboutSection } from "@/components/sections/about-section";
-import { ContactSection } from "@/components/sections/contact-section";
+import { BookingCtaSection } from "@/components/sections/booking-cta-section";
+import { ContactCtaSection } from "@/components/sections/contact-cta-section";
 import { FooterSection } from "@/components/sections/footer-section";
 import { Navbar } from "@/components/sections/navbar";
 
@@ -16,7 +17,7 @@ export default function Home() {
         <Navbar />
       </header>
 
-      <main id="main-content" className="bg-white">
+      <main id="main-content" style={{ backgroundColor: "#0A0A0A" }}>
         <section aria-label="Hero">
           <HeroSection />
         </section>
@@ -25,11 +26,11 @@ export default function Home() {
           <LendersSection />
         </section>
 
-        <section id="services" aria-label="Finance services">
+        <section aria-label="Finance services">
           <ServicesSection />
         </section>
 
-        <section id="process" aria-label="How it works">
+        <section aria-label="How it works">
           <JourneySection />
         </section>
 
@@ -37,16 +38,20 @@ export default function Home() {
           <WhySection />
         </section>
 
-        <section id="testimonials" aria-label="Client testimonials">
+        <section aria-label="Client testimonials">
           <TestimonialsSection />
         </section>
 
-        <section id="about" aria-label="About Moe">
+        <section aria-label="About Moe">
           <AboutSection />
         </section>
 
-        <section id="contact" aria-label="Contact Moe">
-          <ContactSection />
+        <section aria-label="Book a free call">
+          <BookingCtaSection />
+        </section>
+
+        <section aria-label="Contact Moe directly">
+          <ContactCtaSection />
         </section>
       </main>
 

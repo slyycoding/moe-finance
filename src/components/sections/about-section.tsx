@@ -1,6 +1,6 @@
 "use client";
 
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, ArrowRight } from "lucide-react";
 
 const credentials = [
   "Certificate IV in Finance & Mortgage Broking",
@@ -18,24 +18,22 @@ const highlights = [
 
 export function AboutSection() {
   return (
-    <div className="py-16 sm:py-20 bg-white">
-      <div className="container mx-auto px-4 sm:px-6">
+    <div id="about" className="py-16 sm:py-24" style={{ backgroundColor: "#0A0A0A" }}>
+      <div className="container mx-auto">
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
 
             {/* Left — copy */}
             <div>
-              <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: "#C4922A" }}>
-                About Moe
-              </p>
+              <span className="label-chip mb-4 inline-block">About Moe</span>
               <h2
-                className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6"
-                style={{ fontFamily: "var(--font-heading)", letterSpacing: "-0.02em" }}
+                className="text-3xl sm:text-4xl font-bold mb-6"
+                style={{ fontFamily: "var(--font-heading)", letterSpacing: "-0.02em", color: "#F0EDE8" }}
               >
                 A Broker Who Actually Works For You
               </h2>
 
-              <div className="space-y-4 text-gray-500 text-base leading-relaxed mb-8">
+              <div className="space-y-4 text-base leading-relaxed mb-8" style={{ color: "rgba(240,237,232,0.55)" }}>
                 <p>
                   Mohammed Elsayyed — known as Moe — is a Melbourne-based finance broker with over four years of experience helping Australians access the right lending solutions.
                 </p>
@@ -58,7 +56,7 @@ export function AboutSection() {
                       style={{ color: "#C4922A" }}
                       aria-hidden
                     />
-                    <span className="text-gray-600 text-sm">{q}</span>
+                    <span className="text-sm" style={{ color: "rgba(240,237,232,0.6)" }}>{q}</span>
                   </li>
                 ))}
               </ul>
@@ -67,7 +65,8 @@ export function AboutSection() {
             {/* Right — stats + CTA */}
             <div className="flex flex-col gap-6">
               <div
-                className="grid grid-cols-3 gap-4 p-6 rounded-xl border border-gray-100"
+                className="grid grid-cols-3 gap-4 p-6 rounded-xl"
+                style={{ backgroundColor: "#131313", border: "1px solid rgba(255,255,255,0.07)" }}
               >
                 {highlights.map(({ value, label }) => (
                   <div key={label} className="text-center">
@@ -77,16 +76,21 @@ export function AboutSection() {
                     >
                       {value}
                     </p>
-                    <p className="text-xs text-gray-500 leading-tight">{label}</p>
+                    <p className="text-xs leading-tight" style={{ color: "rgba(240,237,232,0.4)" }}>
+                      {label}
+                    </p>
                   </div>
                 ))}
               </div>
 
               <div
-                className="p-6 rounded-xl border"
-                style={{ borderColor: "#E8D5A3", backgroundColor: "#FDF6E7" }}
+                className="p-6 rounded-xl"
+                style={{ backgroundColor: "rgba(196,146,42,0.08)", border: "1px solid rgba(196,146,42,0.2)" }}
               >
-                <p className="text-gray-700 text-sm leading-relaxed italic mb-4">
+                <p
+                  className="text-sm leading-relaxed italic mb-4"
+                  style={{ color: "rgba(240,237,232,0.65)" }}
+                >
                   &ldquo;With Moe, it&apos;s never simply a &lsquo;no&rsquo; — there is always an option, strategy or pathway worth exploring.&rdquo;
                 </p>
                 <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#C4922A" }}>
@@ -95,14 +99,12 @@ export function AboutSection() {
               </div>
 
               <a
-                href="#contact"
+                href="/contact"
                 aria-label="Get in touch with Moe"
-                className="block text-center py-4 rounded-md text-white font-semibold text-base transition-colors duration-200"
-                style={{ backgroundColor: "#C4922A" }}
-                onMouseEnter={e => (e.currentTarget.style.backgroundColor = "#A67720")}
-                onMouseLeave={e => (e.currentTarget.style.backgroundColor = "#C4922A")}
+                className="btn-primary flex items-center justify-center gap-2 group"
               >
                 Work With Moe
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" aria-hidden />
               </a>
             </div>
           </div>

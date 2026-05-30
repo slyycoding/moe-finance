@@ -24,7 +24,7 @@ function MoeLogoLight({ className }: { className?: string }) {
         fontFamily="var(--font-body, 'Inter', sans-serif)"
         fontSize={11}
         fontWeight={500}
-        fill="rgba(255,255,255,0.4)"
+        fill="rgba(240,237,232,0.35)"
         letterSpacing={2.5}
       >
         FINANCIAL
@@ -42,11 +42,11 @@ function LinkedinIcon({ className }: { className?: string }) {
 }
 
 const serviceLinks = [
-  { title: "Home Loans",      href: "#services" },
-  { title: "Refinancing",     href: "#services" },
+  { title: "Home Loans",        href: "#services" },
+  { title: "Refinancing",       href: "#services" },
   { title: "First Home Buyers", href: "#services" },
-  { title: "Vehicle Finance", href: "#services" },
-  { title: "Business Finance", href: "#services" },
+  { title: "Vehicle Finance",   href: "#services" },
+  { title: "Business Finance",  href: "#services" },
 ];
 
 const companyLinks = [
@@ -54,31 +54,45 @@ const companyLinks = [
   { title: "Why Choose Us", href: "#why" },
   { title: "Reviews",       href: "#testimonials" },
   { title: "About Moe",     href: "#about" },
-  { title: "Contact",       href: "#contact" },
+  { title: "Contact",       href: "/contact" },
 ];
+
+const linkColor = "rgba(240,237,232,0.4)";
+const linkHoverColor = "#C4922A";
 
 export function FooterSection() {
   return (
-    <footer style={{ backgroundColor: "#111827" }} className="px-4 py-12 sm:py-14">
+    <footer style={{ backgroundColor: "#080808" }} className="px-4 py-12 sm:py-14">
       <div className="container mx-auto">
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-10 mb-10 pb-10" style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
+        <div
+          className="grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-10 mb-10 pb-10"
+          style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}
+        >
 
           {/* Brand */}
           <div className="col-span-2 sm:col-span-1 space-y-4">
             <MoeLogoLight className="h-9 w-auto" />
-            <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.4)" }}>
+            <p className="text-sm leading-relaxed" style={{ color: "rgba(240,237,232,0.35)" }}>
               Melbourne&apos;s trusted finance broker — home loans, refinancing, vehicle finance and business lending across Australia since 2021.
             </p>
             <div className="space-y-2">
-              <a href="tel:+61481293396" className="flex items-center gap-2 text-sm transition-colors duration-200" style={{ color: "rgba(255,255,255,0.4)" }}
-                onMouseEnter={e => (e.currentTarget.style.color = "#C4922A")}
-                onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.4)")}>
+              <a
+                href="tel:+61481293396"
+                className="flex items-center gap-2 text-sm transition-colors duration-200"
+                style={{ color: linkColor }}
+                onMouseEnter={e => (e.currentTarget.style.color = linkHoverColor)}
+                onMouseLeave={e => (e.currentTarget.style.color = linkColor)}
+              >
                 <Phone className="w-3.5 h-3.5 flex-shrink-0" aria-hidden />
                 +61 481 293 396
               </a>
-              <a href="mailto:contact@moefinancial.com.au" className="flex items-center gap-2 text-sm transition-colors duration-200" style={{ color: "rgba(255,255,255,0.4)" }}
-                onMouseEnter={e => (e.currentTarget.style.color = "#C4922A")}
-                onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.4)")}>
+              <a
+                href="mailto:contact@moefinancial.com.au"
+                className="flex items-center gap-2 text-sm transition-colors duration-200"
+                style={{ color: linkColor }}
+                onMouseEnter={e => (e.currentTarget.style.color = linkHoverColor)}
+                onMouseLeave={e => (e.currentTarget.style.color = linkColor)}
+              >
                 <Mail className="w-3.5 h-3.5 flex-shrink-0" aria-hidden />
                 contact@moefinancial.com.au
               </a>
@@ -87,14 +101,23 @@ export function FooterSection() {
 
           {/* Services */}
           <div>
-            <p className="text-xs font-semibold uppercase tracking-widest mb-5" style={{ color: "rgba(255,255,255,0.25)" }}>Services</p>
+            <p
+              className="text-xs font-semibold uppercase tracking-widest mb-5"
+              style={{ color: "rgba(240,237,232,0.2)" }}
+            >
+              Services
+            </p>
             <nav aria-label="Services links">
               <ul className="space-y-3 list-none p-0 m-0" role="list">
                 {serviceLinks.map(item => (
                   <li key={item.title}>
-                    <a href={item.href} className="text-sm transition-colors duration-200" style={{ color: "rgba(255,255,255,0.45)" }}
-                      onMouseEnter={e => (e.currentTarget.style.color = "#C4922A")}
-                      onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.45)")}>
+                    <a
+                      href={item.href}
+                      className="text-sm transition-colors duration-200"
+                      style={{ color: linkColor }}
+                      onMouseEnter={e => (e.currentTarget.style.color = linkHoverColor)}
+                      onMouseLeave={e => (e.currentTarget.style.color = linkColor)}
+                    >
                       {item.title}
                     </a>
                   </li>
@@ -105,14 +128,23 @@ export function FooterSection() {
 
           {/* Company */}
           <div>
-            <p className="text-xs font-semibold uppercase tracking-widest mb-5" style={{ color: "rgba(255,255,255,0.25)" }}>Company</p>
+            <p
+              className="text-xs font-semibold uppercase tracking-widest mb-5"
+              style={{ color: "rgba(240,237,232,0.2)" }}
+            >
+              Company
+            </p>
             <nav aria-label="Company links">
               <ul className="space-y-3 list-none p-0 m-0" role="list">
                 {companyLinks.map(item => (
                   <li key={item.title}>
-                    <a href={item.href} className="text-sm transition-colors duration-200" style={{ color: "rgba(255,255,255,0.45)" }}
-                      onMouseEnter={e => (e.currentTarget.style.color = "#C4922A")}
-                      onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.45)")}>
+                    <a
+                      href={item.href}
+                      className="text-sm transition-colors duration-200"
+                      style={{ color: linkColor }}
+                      onMouseEnter={e => (e.currentTarget.style.color = linkHoverColor)}
+                      onMouseLeave={e => (e.currentTarget.style.color = linkColor)}
+                    >
                       {item.title}
                     </a>
                   </li>
@@ -123,13 +155,18 @@ export function FooterSection() {
 
           {/* Connect */}
           <div>
-            <p className="text-xs font-semibold uppercase tracking-widest mb-5" style={{ color: "rgba(255,255,255,0.25)" }}>Connect</p>
+            <p
+              className="text-xs font-semibold uppercase tracking-widest mb-5"
+              style={{ color: "rgba(240,237,232,0.2)" }}
+            >
+              Connect
+            </p>
             <a
               href="https://www.linkedin.com/in/moe-elsayyed/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Connect with Moe on LinkedIn"
-              className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-md text-white text-sm font-medium transition-opacity duration-200 hover:opacity-90"
+              className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-lg text-white text-sm font-medium transition-opacity duration-200 hover:opacity-90"
               style={{ backgroundColor: "#0a66c2" }}
             >
               <LinkedinIcon className="w-4 h-4 flex-shrink-0" />
@@ -139,16 +176,29 @@ export function FooterSection() {
         </div>
 
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <p className="text-xs leading-relaxed max-w-md" style={{ color: "rgba(255,255,255,0.2)" }}>
+          <p
+            className="text-xs leading-relaxed max-w-md"
+            style={{ color: "rgba(240,237,232,0.18)" }}
+          >
             Finance broking services only — not a lender. Always read terms before signing. © {new Date().getFullYear()} Moe Financial. All rights reserved.
           </p>
           <a
-            href="#contact"
+            href="/contact"
             aria-label="Book a call with Moe"
-            className="flex-shrink-0 inline-flex items-center gap-1.5 px-4 py-2 rounded-md border text-xs font-medium transition-all duration-200 group"
-            style={{ borderColor: "rgba(255,255,255,0.12)", color: "rgba(255,255,255,0.4)", minHeight: "36px" }}
-            onMouseEnter={e => { e.currentTarget.style.borderColor = "#C4922A"; e.currentTarget.style.color = "#C4922A"; }}
-            onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.12)"; e.currentTarget.style.color = "rgba(255,255,255,0.4)"; }}
+            className="flex-shrink-0 inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border text-xs font-medium transition-all duration-200 group"
+            style={{
+              borderColor: "rgba(255,255,255,0.1)",
+              color: "rgba(240,237,232,0.35)",
+              minHeight: "36px",
+            }}
+            onMouseEnter={e => {
+              e.currentTarget.style.borderColor = "#C4922A";
+              e.currentTarget.style.color = "#C4922A";
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)";
+              e.currentTarget.style.color = "rgba(240,237,232,0.35)";
+            }}
           >
             Book A Call
             <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" aria-hidden />

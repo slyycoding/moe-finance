@@ -16,7 +16,7 @@ const lenders = [
     name: "NAB",
     svg: (
       <svg viewBox="0 0 90 40" aria-label="NAB" role="img">
-        <rect width="90" height="40" rx="6" fill="white" stroke="#E0E0E0"/>
+        <rect width="90" height="40" rx="6" fill="white"/>
         <g transform="translate(20,20)">
           <line x1="-9" y1="0" x2="9" y2="0" stroke="#CC0000" strokeWidth="2.8" strokeLinecap="round"/>
           <line x1="-6.4" y1="-6.4" x2="6.4" y2="6.4" stroke="#CC0000" strokeWidth="2.8" strokeLinecap="round"/>
@@ -60,7 +60,7 @@ const lenders = [
     name: "Pepper Money",
     svg: (
       <svg viewBox="0 0 128 40" aria-label="Pepper Money" role="img">
-        <rect width="128" height="40" rx="6" fill="white" stroke="#E0E0E0"/>
+        <rect width="128" height="40" rx="6" fill="white"/>
         <text x="17" y="29" fontFamily="Arial Black,sans-serif" fontSize={24} fontWeight={900} fill="#00A14B">P</text>
         <text x="73" y="26" fontFamily="Arial,sans-serif" fontSize={13} fontWeight={700} fill="#00A14B" textAnchor="middle">Pepper Money</text>
       </svg>
@@ -131,40 +131,58 @@ const lenders = [
   },
 ];
 
+function LenderItem({ name, svg }: { name: string; svg: React.ReactNode }) {
+  return (
+    <div
+      className="flex items-center justify-center p-2.5 rounded-lg flex-shrink-0 transition-all duration-300 cursor-default"
+      style={{
+        width: "130px",
+        height: "54px",
+        filter: "grayscale(1) opacity(0.45)",
+        backgroundColor: "rgba(255,255,255,0.03)",
+        border: "1px solid rgba(255,255,255,0.06)",
+        marginRight: "0.75rem",
+      }}
+      onMouseEnter={e => (e.currentTarget.style.filter = "grayscale(0) opacity(1)")}
+      onMouseLeave={e => (e.currentTarget.style.filter = "grayscale(1) opacity(0.45)")}
+      title={name}
+    >
+      <div className="w-full h-full flex items-center justify-center">
+        {svg}
+      </div>
+    </div>
+  );
+}
+
 export function LendersSection() {
   return (
-    <div className="py-14 sm:py-16" style={{ backgroundColor: "#F8F7F4" }}>
-      <div className="container mx-auto px-4 sm:px-6">
-        <p className="text-center text-xs font-semibold uppercase tracking-widest mb-8" style={{ color: "#9CA3AF" }}>
-          Trusted lender panel — 65+ partners nationwide
-        </p>
+    <div className="py-14 sm:py-16" style={{ backgroundColor: "#0D0D0D", borderTop: "1px solid rgba(255,255,255,0.06)", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+      <p
+        className="text-center text-xs font-semibold uppercase tracking-widest mb-8"
+        style={{ color: "rgba(240,237,232,0.3)" }}
+      >
+        Trusted lender panel — 65+ partners nationwide
+      </p>
 
-        <ul
-          className="grid list-none p-0 m-0"
-          style={{ gridTemplateColumns: "repeat(auto-fill, minmax(120px, 1fr))", gap: "0.75rem" }}
-          role="list"
-          aria-label="Lending partners"
-        >
+      <div className="marquee-wrapper">
+        <div className="marquee-track" aria-hidden="true">
           {lenders.map(({ name, svg }) => (
-            <li
-              key={name}
-              className="flex items-center justify-center p-2 rounded-lg transition-all duration-300 cursor-default"
-              style={{ filter: "grayscale(1) opacity(0.5)" }}
-              onMouseEnter={e => (e.currentTarget.style.filter = "grayscale(0) opacity(1)")}
-              onMouseLeave={e => (e.currentTarget.style.filter = "grayscale(1) opacity(0.5)")}
-              title={name}
-            >
-              <div className="w-full" style={{ maxWidth: "120px" }}>
-                {svg}
-              </div>
-            </li>
+            <LenderItem key={`a-${name}`} name={name} svg={svg} />
           ))}
-        </ul>
-
-        <p className="text-center text-xs mt-6" style={{ color: "#9CA3AF" }}>
-          Panel examples only. Lender availability may vary.
-        </p>
+          {lenders.map(({ name, svg }) => (
+            <LenderItem key={`b-${name}`} name={name} svg={svg} />
+          ))}
+        </div>
       </div>
+
+      {/* Accessible static list for screen readers */}
+      <ul className="sr-only" aria-label="Lending partners">
+        {lenders.map(({ name }) => <li key={name}>{name}</li>)}
+      </ul>
+
+      <p className="text-center text-xs mt-6" style={{ color: "rgba(240,237,232,0.2)" }}>
+        Panel examples only. Lender availability may vary.
+      </p>
     </div>
   );
 }
