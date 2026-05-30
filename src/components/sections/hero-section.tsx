@@ -59,7 +59,7 @@ export function HeroSection() {
             <a
               href="/contact"
               aria-label="Book a call with Moe"
-              className="btn-primary w-full sm:w-auto group inline-flex items-center justify-center gap-2"
+              className="btn-secondary w-full sm:w-auto group inline-flex items-center justify-center gap-2"
               style={{ fontSize: "1rem", padding: "1rem 2rem", minHeight: "52px" }}
             >
               Book A Free Call

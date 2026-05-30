@@ -22,7 +22,7 @@ function MoeLogo({ className }: { className?: string }) {
       <line x1="90" y1="6" x2="90" y2="38" stroke="#F4C542" strokeWidth={0.75} opacity={0.4} />
       <text
         x={97} y="26"
-        fontFamily="var(--font-body, 'Inter', sans-serif)"
+        fontFamily="var(--font-body, 'Hanken Grotesk', sans-serif)"
         fontSize={11}
         fontWeight={500}
         fill="rgba(255,255,255,0.5)"

@@ -134,17 +134,26 @@ const lenders = [
 function LenderItem({ name, svg }: { name: string; svg: React.ReactNode }) {
   return (
     <div
-      className="flex items-center justify-center p-2.5 rounded-lg flex-shrink-0 transition-all duration-300 cursor-default"
+      className="flex items-center justify-center p-2.5 rounded-lg flex-shrink-0 transition-all duration-250 cursor-default"
       style={{
         width: "130px",
         height: "54px",
-        filter: "grayscale(1) opacity(0.5)",
         backgroundColor: "#FFFFFF",
         border: "1px solid #E2E8F0",
         marginRight: "0.75rem",
+        transform: "translateY(0)",
+        boxShadow: "none",
       }}
-      onMouseEnter={e => (e.currentTarget.style.filter = "grayscale(0) opacity(1)")}
-      onMouseLeave={e => (e.currentTarget.style.filter = "grayscale(1) opacity(0.5)")}
+      onMouseEnter={e => {
+        e.currentTarget.style.transform = "translateY(-2px)";
+        e.currentTarget.style.boxShadow = "0 4px 12px rgba(20,26,93,0.1)";
+        e.currentTarget.style.borderColor = "#C7D2FE";
+      }}
+      onMouseLeave={e => {
+        e.currentTarget.style.transform = "translateY(0)";
+        e.currentTarget.style.boxShadow = "none";
+        e.currentTarget.style.borderColor = "#E2E8F0";
+      }}
       title={name}
     >
       <div className="w-full h-full flex items-center justify-center">

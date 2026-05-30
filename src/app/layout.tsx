@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Hanken_Grotesk, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const hanken = Hanken_Grotesk({
   subsets: ["latin"],
   variable: "--font-body",
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
-const jakarta = Plus_Jakarta_Sans({
+const sourceSerif = Source_Serif_4({
   subsets: ["latin"],
   variable: "--font-heading",
-  weight: ["600", "700", "800"],
+  weight: ["600", "700"],
   display: "swap",
+  style: ["normal"],
 });
 
 const SITE_URL = "https://moefinancial.com.au";
@@ -125,7 +125,7 @@ export default function RootLayout({
   return (
     <html
       lang="en-AU"
-      className={`${inter.variable} ${jakarta.variable} h-full antialiased`}
+      className={`${hanken.variable} ${sourceSerif.variable} h-full antialiased`}
     >
       <head>
         <script

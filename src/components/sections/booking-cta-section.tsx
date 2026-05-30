@@ -27,7 +27,7 @@ export function BookingCtaSection() {
             <a
               href="/contact"
               aria-label="Start your finance application"
-              className="btn-primary group inline-flex items-center gap-2"
+              className="btn-secondary group inline-flex items-center gap-2"
               style={{ fontSize: "1rem", padding: "1rem 2.25rem", minHeight: "56px" }}
             >
               Start My Application
